@@ -181,69 +181,6 @@ namespace triansh
                                 Console.WriteLine(" ");
                             }
                         }
-                        /*
-                         //Alternative way to enter ship location but be careful and edit variables that outside the loop.
-
-                    do
-                    {
-                        Console.Write("Please enter Ax value of triangle (between 0 and 30): ");
-                        if (Int32.TryParse(Console.ReadLine(), out Ax) && Ax >= 0 && Ax <= 30)
-                        {
-                            break;
-                        }
-                        Console.WriteLine("Please enter a valid Ax value");
-                    }
-                    while (true);
-                    do
-                    {
-                        Console.Write("Please enter Ay value of triangle between (0 and 12): ");
-                        if (Int32.TryParse(Console.ReadLine(), out Ay) && Ay >= 0 && Ay <= 12)
-                        {
-                            break;
-                        }
-                        Console.WriteLine("Please enter a valid Ay value");
-                    }
-                    while (true);
-                    do
-                    {
-                        Console.Write("Please enter Bx value of triangle between (0 and 30): ");
-                        if (Int32.TryParse(Console.ReadLine(), out Bx) && Bx >= 0 && Bx <= 30)
-                        {
-                            break;
-                        }
-                        Console.WriteLine("Please enter a valid Bx value");
-                    }
-                    while (true);
-                    do
-                    {
-                        Console.Write("Please enter By value of triangle (between 0 and 12:) ");
-                        if (Int32.TryParse(Console.ReadLine(), out By) && By >= 0 && By <= 12)
-                        {
-                            break;
-                        }
-                        Console.WriteLine("Please enter a valid By value");
-                    }
-                    while (true);
-                    do
-                    {
-                        Console.Write("Please enter Cx value of triangle (between 0 and 30): ");
-                        if (Int32.TryParse(Console.ReadLine(), out Cx) && Cx >= 0 && Cx <= 30)
-                        {
-                            break;
-                        }
-                        Console.WriteLine("Please enter a valid Cx value");
-                    }
-                    while (true);
-                    do
-                    {
-                        Console.Write("Please enter Cy value of triangle (between 0 and 12): ");
-                        if (Int32.TryParse(Console.ReadLine(), out Cy) && Cy >= 0 && Cy <= 12)
-                        {
-                            break;
-                        }
-                        Console.WriteLine("Please enter a valid Cy value");
-                    }      
-                    */
                         //Lenght of the edges
                         double c;
                         c = ((Ax - Bx) * (Ax - Bx)) + ((Ay - By) * (Ay - By));
