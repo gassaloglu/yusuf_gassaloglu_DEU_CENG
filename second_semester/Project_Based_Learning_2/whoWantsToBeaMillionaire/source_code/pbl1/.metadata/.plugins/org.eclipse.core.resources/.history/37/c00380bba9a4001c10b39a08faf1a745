@@ -1,0 +1,58 @@
+package pbl;
+
+import enigma.core.Enigma;
+import enigma.event.TextMouseEvent;
+import enigma.event.TextMouseListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import enigma.console.TextAttributes;
+import java.awt.Color;
+
+public class Game {
+   public enigma.console.Console cn = Enigma.getConsole("Mouse and Keyboard");
+   public KeyListener klis; 
+
+   // ------ Standard variables for mouse and keyboard ------
+
+   public int keypr;   // key pressed?
+   public int rkey;    // key   (for press/release)
+   public String selected;
+   // ----------------------------------------------------
+   
+   
+   Game() throws Exception {   // --- Contructor
+                 
+      
+      klis=new KeyListener() {
+         public void keyTyped(KeyEvent e) {}
+         public void keyPressed(KeyEvent e) {
+            if(keypr==0) {
+               keypr=1;
+               rkey=e.getKeyCode();
+            }
+         }
+         public void keyReleased(KeyEvent e) {}
+      };
+      cn.getTextWindow().addKeyListener(klis);
+      // ----------------------------------------------------
+      
+
+      Main m = new Main();
+      while(true) {
+         
+         if(keypr==1) {    // if keyboard button pressed
+            if(rkey==KeyEvent.VK_A) { selected = "A"; break; }
+            if(rkey==KeyEvent.VK_B) { selected = "B"; break; }
+            if(rkey==KeyEvent.VK_C) { selected = "C"; break; }
+            if(rkey==KeyEvent.VK_D) { selected = "D"; break; }
+            if(rkey==KeyEvent.VK_G) { selected = "G"; break; }
+            if(rkey==KeyEvent.VK_G) { selected = "E"; break; }
+            if(rkey==KeyEvent.VK_F) {S selected = "F"; break;
+            }
+                      
+            keypr=0;    // last action  
+         }
+         Thread.sleep(20);
+      }
+   }
+}

@@ -1,0 +1,669 @@
+package pbl;
+
+
+import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+import enigma.core.Enigma;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Main {
+	public static enigma.console.Console cn = Enigma.getConsole("Mouse and Keyboard");
+	static Scanner scanner = new Scanner(System.in);	
+	static Question[] question;
+    static Participant[] participant;          
+    static String[] dictionary ;
+    static WordCloud[] keywords;
+    static Statistics[] question_history;
+    static boolean is_choice_1_done = false, is_choice_2_done = false, is_choice_3_done = false;
+    static int question_number=1;
+    static String [][] categoryStatistics;
+	static String categoryString="";
+    static int counter_statistics=0;
+	
+    
+    // question count function
+	static int getQuestionsLength() {
+		return question.length;
+	}
+	
+	public static void consoleClear() {
+		cn.getTextWindow().setCursorPosition(0, 0);
+		for (int k = 0; k < 100; k++) {
+			for (int k2 = 0; k2 < 100; k2++) {
+				System.out.print(" ");
+			}
+			System.out.println(" ");
+		}
+		cn.getTextWindow().setCursorPosition(0, 0);
+		
+	}
+	
+	
+	// the procedure that gets questions file
+	public static void getQuestionsFile() {
+		File questionsFile = null;
+		String[] questions = null;
+		Scanner questionScan = null; 
+		System.out.print( "Please enter the questions file name: " );
+        String questionsFileName = scanner.nextLine(); // question files name scanner
+        
+        try {
+            questionsFile = new File(questionsFileName+".txt"); // opening file
+            questionScan = new Scanner( questionsFile );     // file scanner      
+            String text = ""; // to store text in the program
+            // writing file data to text
+            while (questionScan.hasNextLine()) {
+            	String[] temp = questionScan.nextLine().strip().split("#");
+            	if (temp.length == 8) {
+					for (int i = 0; i < temp.length; i++) {
+						text += temp[i] + "#";
+					}
+					text += "\n";
+				}
+            	else {
+            		String tempStr = "";
+            		for (int i = 0; i < temp.length; i++) {
+            			tempStr += temp[i] + "#";
+					}
+					System.out.println("The format of question is wrong -> "+ tempStr);
+				}
+            	
+            }          
+            questions = text.split("\n");        // to  separate questions    
+            question = new Question[questions.length];   // resize the question array
+        }
+        catch (Exception e) {
+			System.out.println(e);
+			is_choice_1_done = false;
+		}
+        try {  		       
+            // splits and stores question information question by question into object
+            for (int i = 0; i < questions.length; i++) {
+				String[] temp = questions[i].split("#"); 
+				
+					question[i] = new Question(temp[0], temp[1],temp[2],temp[3],temp[4],temp[5],temp[6],temp[7]); //store into the object
+				}
+            }
+            catch (Exception e) {
+            	System.out.println(e);
+            }
+	        if (questionScan != null) {
+				questionScan.close(); // close scanner
+			}
+        } 
+       
+        
+    
+
+	// the procedure that gets participants file
+	public static void getParticipants() {
+		System.out.print( "Please enter the participants file name: " );
+        String participantsFileName = scanner.nextLine(); // file name scanner
+        
+        try {
+
+            File participantsFile = new File(participantsFileName +".txt"); //opening file
+            Scanner participantScan = new Scanner( participantsFile );      // reading file     
+            String text = ""; // to store text in the program
+            // writing file data to text
+            while ( participantScan.hasNextLine()) {
+            	String[] temp = participantScan.nextLine().strip().split("#");
+            	if (temp.length == 4) {
+					for (int i = 0; i < temp.length; i++) {
+						text += temp[i] + "#";
+					}
+					text += "\n";
+            	}
+            	else {
+            		String tempStr = "";
+            		for (int i = 0; i < temp.length; i++) {
+            			tempStr += temp[i] + "#";
+					}
+					System.out.println("The format of participant is wrong -> " + tempStr);
+				}
+            }
+            
+            String[] participants = text.split("\n");       	// to  separate participants    
+            participant = new Participant[participants.length];   // resize the question array      
+            // splits and stores participant information participant by participant into object
+            for (int i = 0; i < participants.length; i++) {
+				String[] temp = participants[i].split("#");
+				//String[] temp_date = temp[1].split(".");
+				//System.out.println(Integer.parseInt(temp_date[0]) + " "+Integer.parseInt(temp_date[1]) + " " + Integer.parseInt(temp_date[2]));
+				String[] temp_address = temp[3].split(";");
+				//Date temp_date_obj = new Date(Integer.parseInt(temp_date[0]),Integer.parseInt(temp_date[1]), Integer.parseInt(temp_date[2]));
+				Address temp_address_obj = new Address(temp_address[0],temp_address[1],temp_address[2],temp_address[3],temp_address[4]);
+				//error for string date
+				Date temp_date_obj = new Date(12,12,12); //temp
+				participant[i] = new Participant(temp[0], temp_date_obj ,temp[2],temp_address_obj,false); //store into the object
+				
+			}
+	        participantScan.close();
+        }        
+        catch (FileNotFoundException e){
+            System.out.println(e);
+            is_choice_2_done = false;
+        }
+	}
+    	
+	// the procedure that prints category screen
+    public static void categoryScreen() {
+     try {
+    	 System.out.println("CATEGORY \t THE NUMBER OF QUESTIONS");
+    	 boolean visited[] = new boolean[question.length];
+    	 boolean noEnglishCategory = true, noCengCategory=true; // data for compulsory categories
+    	    Arrays.fill(visited, false);
+    	    // counting categories
+    	    for (int i = 0; i < question.length; i++) {
+    	        if (visited[i] == true)
+    	            continue;
+    	    int count = 1;
+    	    for (int j = i + 1; j < question.length; j++) {
+            	
+    	        if (question[i].getCategory().equals(question[j].getCategory())) { //if it matches
+    	            visited[j] = true;
+    	            count++;
+    	        }
+    	    }	    
+    	    System.out.println(question[i].getCategory() + "\t\t" + count);
+    	    if (question[i].getCategory().equals("English")) { // to control English category
+    			noEnglishCategory = false;
+    		} 	    
+    	    if (question[i].getCategory().equals("Computer")) { // to control Computer category
+    			noCengCategory = false;
+    		}
+    	}
+    	    if (noEnglishCategory || noCengCategory) {
+    	    	System.out.println("English and Computer Engineering are compulsory categories. Please check your file.");
+    			
+    		} 
+	} catch (Exception e) {
+		System.out.println(e);
+		}
+    }	
+   
+    // the procedure that shows difficulty statistics.
+    public static void difficultyScreen() {
+        try {
+        	System.out.println("DIFFICULTY LEVEL \t THE NUMBER OF QUESTIONS");	
+          	 boolean visited[] = new boolean[question.length];
+          	    Arrays.fill(visited, false);
+          	    for(int difficulty_level = 1; difficulty_level < 6; difficulty_level++) { // to sort in ascending order
+          	    	int count = 0; //question counter
+       	   	    for (int i = 0; i < question.length; i++) {
+       	   	    	// counter
+       	   	        if (visited[i] == false && Integer.valueOf(question[i].getDifficulty()) == difficulty_level) { 
+       	   	        	count ++;  		   	     
+       	   	        	}    	   	             	   	 
+       	   	        }
+       	   	        System.out.println("\t" + difficulty_level + "\t\t\t" + count);
+       	   	    }
+		} catch (Exception e) {
+			System.out.println(e);
+			}
+    }
+    
+    // spell check algorithm
+    public static void spellCheck() {
+    	try {
+    		boolean exit = false;
+    		for (int i = 0; i < question.length; i++) {
+        		String temp = "";
+        		temp = question[i].getQuestion().replaceAll("\\p{Punct}", ""); //removing punctuation marks
+        		String[] tempArr = temp.split(" ");   		 // Separator		
+        		for (int j = 0; j < tempArr.length; j++) {
+        			boolean needSpellCheck = true;          // if it needs spell check
+        			// to control if word in the dictionary
+        			for(String word : dictionary) {
+        	    		if(tempArr[j].strip().equalsIgnoreCase(word)) {
+        	    			needSpellCheck = false;   	    			
+        	    			break;
+        	    		}    	    		
+            		}
+        			if (needSpellCheck && tempArr[j].length() != 0) {		
+        			// to control suggestions
+    				for(String corrector : dictionary) {
+    					boolean skip = false;
+    					// first control is word length control 
+    					if (corrector.length() == tempArr[j].length()) {
+    						int tempCounter = 0; // counter for not matched letters
+    						char[] tempLetters = new char[4];		// we need that array in case of reversed letters				
+    						for (int k = 0; k < tempArr[j].length(); k++) {							
+    							if(tempArr[j].toLowerCase().toCharArray()[k] != corrector.toLowerCase().toCharArray()[k]) {
+    								tempCounter++;
+    								//storing not matched letters
+    								if(tempCounter == 1) { 
+    									tempLetters[0] = tempArr[j].toLowerCase().toCharArray()[k];
+    									tempLetters[1] =  corrector.toLowerCase().toCharArray()[k];			
+    								}
+    								else if(tempCounter == 2) {
+    									tempLetters[2] = tempArr[j].toLowerCase().toCharArray()[k];
+    									tempLetters[3] =  corrector.toLowerCase().toCharArray()[k];			
+    								}		
+    								// if there is more than 2 not matched letters
+    								if(tempCounter > 2) {
+    									break;
+    									}
+    								}
+    							}
+    						//if there is only 1 letter not matched
+    						if (tempCounter == 1) {
+    							System.out.println(question[i].getQuestion());
+    							System.out.println(tempArr[j] +" --> "+ corrector); // suggestion screen
+    							int choiceInput = -1;
+    							boolean invalid = true;
+    							// loop to get valid input
+    					        do{
+    					            System.out.print("Do you want to replace (1-yes 2-no 3-exit 4-skip word): ");
+    					            if (scanner.hasNextInt()) {
+    					                choiceInput = scanner.nextInt();
+    					                scanner.nextLine();
+    					                boolean flag = true;
+    					                if (choiceInput > 0  && choiceInput < 5){
+    					                    invalid = false;
+    					                    flag = false;
+    					                }
+    					                if (flag){
+    					                    System.out.println("Invalid input. Please enter only 1, 2, 3 and 4");
+    					                }
+
+    					            } else {
+    					                System.out.println("Invalid input. Please enter only 1, 2, 3 and 4.");
+    					                scanner.nextLine();
+    					            }
+    					        }while(invalid);
+    							// if input is 1
+    					        if(choiceInput == 1) {
+    							question[i].setQuestion(question[i].getQuestion().replaceAll(tempArr[j], corrector)); //corrector
+    					        }
+    					        else if (choiceInput == 3) {
+									exit = true;
+								}
+    					        
+    					        else if (choiceInput == 4) {
+									skip = true;
+								}
+    							System.out.println(question[i].getQuestion());	// to show new question	
+    							System.out.println("------------------------");
+    						}
+    						// if there is reversed letters
+    						else if(tempCounter == 2 && tempLetters[3] == tempLetters[0] && tempLetters[1] == tempLetters[2]) {
+    							System.out.println(question[i].getQuestion());
+    							System.out.println(tempArr[j] +" --> "+ corrector); // suggestion screen
+    							int choiceInput = -1;
+    							boolean invalid = true;
+    							// loop to get valid input
+    							 do{
+     					            System.out.print("Do you want to replace (1-yes 2-no 3-exit 4-skip word): ");
+     					            if (scanner.hasNextInt()) {
+     					                choiceInput = scanner.nextInt();
+     					                scanner.nextLine();
+     					                boolean flag = true;
+     					                if (choiceInput > 0  && choiceInput < 5){
+     					                    invalid = false;
+     					                    flag = false;
+     					                }
+     					                if (flag){
+     					                    System.out.println("Invalid input. Please enter only 1, 2, 3 and 4");
+     					                }
+
+     					            } else {
+     					                System.out.println("Invalid input. Please enter only 1, 2, 3 and 4.");
+     					                scanner.nextLine();
+     					            }
+     					        }while(invalid);
+    							 
+    					        if(choiceInput == 1) {
+    							question[i].setQuestion(question[i].getQuestion().replaceAll(tempArr[j], corrector));
+    					        }
+    					        else if (choiceInput == 3) {
+									exit = true;
+								}
+    					        else if (choiceInput == 4) {
+									skip = true;
+								}
+    							System.out.println(question[i].getQuestion());	
+    							System.out.println("------------------------");
+    							}					
+    						}	
+    					if (exit || skip) {
+    						break;
+    					}
+    					}
+    	    		}
+        			if (exit) {
+						break;
+					}
+    	    	}
+        		if (exit) {
+					break;
+    	    }
+        		if (exit) {
+					break;
+        		}
+    	}
+		} 
+    	catch (Exception e) {
+			System.out.println(e);
+		}	   
+	}
+    
+    // word cloud procedure
+    public static void wordCloudFunc() {
+    	try {
+    		keywords = new WordCloud[question.length]; // resize array
+    		// to get a key from every questions
+        	for (int i = 0; i < question.length; i++) {
+        		WordCloud key = new WordCloud(question[i].getQuestion());    		
+        				keywords[i] = new WordCloud(key.wc(),Integer.parseInt(question[i].getDifficulty()), true); 	// the function that gets key from question	      		
+    			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}	
+    	
+    }
+		   
+    // procedure that gets dictionary
+    public static void getDictionary() {    	
+    	try {  	        
+        File dictionaryFile = new File("dictionary.txt"); // to open file       
+        BufferedReader br = new BufferedReader(new FileReader(dictionaryFile));       // file reader
+        dictionary = br.lines().toArray(String[]::new); //storing dictionary
+		br.close();	
+		} catch (IOException e) {
+			System.out.println(e);
+			}	                    			  
+		}
+
+public static void competition() {    	
+		Statistics[] question_history = new Statistics[question.length];
+    	int money = 0;
+    	for (int i = 0; i < participant.length; i++) {
+			boolean fiftyPerc = true, doubleDip = true;
+    		consoleClear();
+			System.out.println("Contestant :" + participant[i].getName());
+			System.out.println("----------------------------------------");
+			int count = 1, temp_question_number= question_number;
+			boolean is_word_cloud_showed = false;
+			while(!is_word_cloud_showed){
+				
+				for (int j = 0; j < keywords.length; j++) {
+					if(Integer.valueOf(question[j].getDifficulty()) == temp_question_number) {
+						is_word_cloud_showed = true;
+						if (count % 4 == 0) {
+							System.out.println(keywords[j].getKey());
+							count++;
+						}
+						else if (count % 4 != 0) {
+							System.out.print(keywords[j].getKey() + "\t");
+							count++;
+						}
+					}
+					if(j == keywords.length-1 && !is_word_cloud_showed) {
+						temp_question_number++;
+					}
+				}
+			}
+			System.out.println();
+			
+			System.out.println("Please enter a keyword: ");
+			String keywordSelection = scanner.nextLine();
+			Boolean flag = true;
+			for (int j = 0; j < keywords.length; j++) { // olmayan keyword girince oyuncu atlýyor
+				if (keywordSelection.equalsIgnoreCase(keywords[j].getKey()) && keywords[j].notAsked() && keywords[j].getDifficultyLevel() == question_number) {  
+					keywordSelection = "";
+					keywords[j].setAsked(false);
+					keywords[j].setKey("     ");
+					Multithrading R1 = new Multithrading();
+					
+					consoleClear();
+
+				      
+					System.out.println(question[j].getQuestion());
+					
+					System.out.println("A) " + question[j].getChoice1());
+					System.out.println("B) " + question[j].getChoice2());
+					System.out.println("C) " + question[j].getChoice3());
+					System.out.println("D) " + question[j].getChoice4());
+					
+					System.out.println("Enter your choice (E for exit): ");
+					if (doubleDip) {
+						System.out.println("D : double dip");
+					}
+					if (fiftyPerc) {
+						System.out.println("F : 50%");
+					}
+					
+					R1.start();
+					String selectedChoice = scanner.nextLine();
+				    
+					R1.end();
+					if (selectedChoice.equalsIgnoreCase(question[j].getAnswer())) {
+						System.out.println("CONGRATS");
+						participant[i].addOneToQuestionCount();
+						question_history[counter_statistics]= new Statistics(j,i, true);
+						counter_statistics++;
+						question_number++;
+						i--;
+						switch (question_number) {
+						case 2:
+							money = 20000;
+						case 3:
+							money = 100000;
+						case 4:
+							money = 250000;
+						case 5:
+							money = 500000;
+						}
+					}
+					else if (selectedChoice.equalsIgnoreCase("E")) {
+						question_number = 1;
+						System.out.println("Next Contestant Y/N?");
+						String nextContestantChoise = scanner.nextLine();
+						if (nextContestantChoise.equalsIgnoreCase("N")) {
+							flag = false;
+						}
+						System.out.println("CONGRATS, You won $" + money);
+						money = 0;
+					}
+					else {
+						question_number = 1;
+						question_history[counter_statistics]= new Statistics(j,i, false);
+						counter_statistics++;
+						System.out.println("WRONG ANSWER");
+						System.out.println("Next Contestant Y/N?");
+						String nextContestantChoise = scanner.nextLine();
+						if (nextContestantChoise.equalsIgnoreCase("N")) {
+							flag = false;
+						}
+						
+						if (question_number <= 2) {
+							System.out.println("0$");
+						}
+						else if (question_number <= 4) {
+							System.out.println("CONGRATS, $100.000");
+						}
+						else {
+							System.out.println("CONGRATS,  $500.000");
+						}
+						
+					}
+					if(question_number == 6) {
+						System.out.println("YOU ARE THE WINNER, You won $1.000.000");
+						question_number=1;
+						System.out.println("Next Contestant Y/N?");
+						String nextContestantChoise = scanner.nextLine();
+						if (nextContestantChoise.equalsIgnoreCase("N")) {
+							flag = false;
+						money = 0;
+					}
+
+				}
+					if (!flag) {
+						break;
+				}
+
+				
+			}
+				
+			
+
+			if (!flag) {
+					break;
+			}
+		}
+			if (!flag) {
+				break;
+			}
+	}
+    	
+    }    
+    
+
+public static void categoryCalculations() {
+	String [] temp5;
+    temp5 = categoryString.split(";");
+	String[][] categoryStatistics = new String[(temp5.length-1)/2][3];
+    int a = 0;
+	for(int i = 0; i < temp5.length-2; i=i+2) {
+    	categoryStatistics[a][0] = temp5[i]; 
+    	categoryStatistics[a][1] = temp5[i+1];
+    	categoryStatistics[a][2] = "0";
+    	a++;
+    	
+    }
+    for(int i = 0; i<(temp5.length-1)/2;i++) {
+		for(int j = 0; j<counter_statistics;j++){
+			if((question[question_history[j].getQuestion_id()].getCategory()).equalsIgnoreCase(categoryStatistics[i][0])){
+				if(question_history[j].isIs_answered_correctly()) {
+    				int tempNum = Integer.parseInt(categoryStatistics[i][2])+1;
+    				categoryStatistics[i][2] = String.valueOf(tempNum);
+				}
+			}
+		}
+	}
+    for(int i = 0; i<(temp5.length-1)/2;i++) {
+
+        System.out.print(categoryStatistics[i][0]);
+        System.out.print(categoryStatistics[i][1]);
+        System.out.println(categoryStatistics[i][2]);
+    }
+}
+    
+    
+    
+    // variables for menu
+    static int choiceInput= -1;
+    static boolean invalid = true;
+    
+    // menu procedure
+    public static void Menu() {
+    	
+    	do {
+    		// to print screen
+    		System.out.println("* MENU *");
+            System.out.println("1- Load Questions");
+            System.out.println("2- Load Participants");
+            System.out.println("3- Start Competition");
+            System.out.println("4- Show Statistics");
+            System.out.println("5- Exit");
+            boolean flag=false; // to get correct input
+            do {
+            	try {
+                    System.out.print("Please enter Your Choice: ");
+                    choiceInput = scanner.nextInt();
+                    scanner.nextLine();
+            		if (choiceInput<6 && choiceInput>0) {
+    					flag = true;
+    				}
+    				else {
+    					System.out.println("We only have 1 to 5.");					
+    				}
+    			} catch (InputMismatchException e) {
+    				System.out.println("Please enter a valid value.");
+    				scanner.next();
+    			}
+            }while(!flag);   
+            // load questions choice
+            if (choiceInput==1) {
+				is_choice_1_done = true;
+				// calling procedures and functions
+				getQuestionsFile();
+        		System.out.println();
+        		spellCheck();
+        		System.out.println();
+        		categoryScreen();
+        		System.out.println();
+        		difficultyScreen();
+        		System.out.println();
+        		wordCloudFunc();       		        		
+        		}
+            // load participants choice
+			else if (choiceInput==2) {
+				is_choice_2_done=true; 
+				getParticipants();           		
+			}
+            // start competition choice
+			else if (choiceInput==3 ) {
+				if(is_choice_1_done && is_choice_2_done) {
+            		competition();
+            		is_choice_3_done = true;
+				}
+				else {
+					System.out.println("Option 1 and 2 must be done before option 3.");
+				}
+			}
+            // show statistics choice
+			else if (choiceInput==4) {
+				if(is_choice_3_done) {
+					categoryCalculations();
+				}
+				else {
+					System.out.println("Option 3 must be done before option 4.");
+				}					
+			}
+		} while (choiceInput!=5);       
+    }
+        
+    
+    public static void test() {
+    	System.out.println();
+    	System.out.println("----------");
+    	System.out.println();
+    	
+    	for (int i = 0; i < keywords.length; i++) {
+			System.out.println(keywords[i].getDifficultyLevel());
+		}
+    	
+    	System.out.println();
+    	System.out.println("----------");
+    	System.out.println();
+    	
+    	for (int i = 0; i < question.length; i++) {
+    		System.out.println(question[i].getQuestion());
+		}   	
+    	
+    	System.out.println();
+    	System.out.println("----------");
+    	System.out.println();
+    	
+    	for (int i = 0; i < participant.length; i++) {
+			System.out.println(participant[i].getAddress().getProvince());
+		}
+    }
+             
+    public static void main(String[] args) throws FileNotFoundException {   	     	     	
+    	getDictionary();   
+    	
+    	Menu();
+		test();
+        scanner.close();
+    }
+}

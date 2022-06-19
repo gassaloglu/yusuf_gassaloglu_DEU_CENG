@@ -1,0 +1,176 @@
+English#Firewall in zomputer ___ for security.#are used#is used#uses#use#B#1
+English#There are ___ on the Web.#a few pages#hundreds of pages#thousands of pages#billions of pages#D#3
+English#What is another word for applitacions in computer engineering?#Face makeup#CV submission#Peripherals#Programs#D#4
+English#One of the advantages of Information Technology is ___#Strength#Speed#Accurate#Test#B#3
+English#One of the applications of Information Technology is ___#Health issue#Health problem#Health care#Health smart#C#5
+English#All of these are applications in Information Technology except#Administration#Education#Internet#Business#C#5
+English#Google, Bing, Yahoo! and Baidu are the four popular#search for#search engines#Internet research#webquest#B#2
+English#____ are additional computer components such as printers and scanners.#Supplements#Peripherals#Add ons#Extras#B#4
+Computer#Which of the following is hardware?#Program#Operating System#Monitor#Microsoft Office#C#1
+Computer#What does RAM stand for?#Review Admittance Monitor#Review Admittance Memory#Random Access Memory#Random Access Monitor#C#5
+Computer#"Microsoft Office" is an example of#Integrated software#Desktop publishing#A database#Hardware#A#2
+Computer#Three types of multiple user computers are super computer, server and ___.#mainframe#attributes#database#utility#A#3
+Computer#What button is used to retrieve text from the Clipboard?#Cut#Save#Paste#Undo#C#1
+Computer#Which button enlarges a window to the full size of the screen?#Minimize#Maximize#Locate#Close#B#1
+Computer#The ___ indicates your position within the window.#scroll bar#scroll arrow#scroll line#scroll box#A#2
+Mathematics#A die is tossed three times. What is the probability of getting an odd number at least once?#7/16#7/8#3/16#7/5#B#5
+Mathematics#You can multiply a 2X3 matrix by which matrix?#2X2#2X12#3X12#2X3#C#1
+Mathematics#The eigen values of a skew-symmetric matrix are#always zero#always pure imaginary#either zero or pure imaginary#always real#C#5
+English#Which word is one of the fruit names?#Chair#Banana#Air#Eat#B#1
+English#Which word has the similar meaning as "Huge"?#Tough#Proof#Massive#Hard#C#2
+English#Which word has the similar meaning as "Demand"?#Desire#Invest#Invent#Study#A#3
+English#What is the opposite meaning of the "Hide"?#Exhale#Excess#Extend#Expose#D#4
+English#which word has the similar meaning as "Hate"?#Abominate#Lack#Drub#Scuff#A#5
+English#Python ___ three high-level data structures: lists, dictionaries and tuples#has#have#-#had#A#1
+English#'None' is a Python type ___ value indicates that no value exists.#whom#which#whose#that#C#2
+English# What is the another word for implementation?#integration#configuration#installation#optimization#C#3
+English#CPU is the electronic circuitry that ___ instructions comprising a computer program.#executor#executes #running#making#B#4
+English#More than 400 robots ___ the average modern car.#are assembled#assembling#to assemble#assemble#D#5
+English#There are too ____ questions in this test?#much#many#any#some#B#2
+English#Children under 16 ____ half the population of the city?#make up#put up#take up#bring up#A#3
+English#We ___ by a loud noise during the night?#woke up#are woken up#were woken up#were waking up#C#4
+English#When he realised I ___ at him,he ___ away?#looked/was turning#was looking/ turned#was looking / was turning#looked/turned#B#5
+English#What type computers are mostly client computers in a client-server system?#mini-computer#midi-computer#micro-computer#macro-computer#C#5
+English#CD-ROM stands for?#Compact Disk Read Only Memory#Compact Driver Read Only Memory#Commarcial Disk Read Only Memory#Commarcial Driver Read Only Memory#A#4
+English#___ is a programmable processor specialized for rendering all visuals on the computer's screen.#CPU#Monitor#GPU#GUI#C#3
+English#Which of the following controls the process of interaction between the user and the operating system?#Database#User interface#Workstation#Controller#B#2
+English#First page of website is termed as?#Outline#Window#Tab#Homepage#D#1
+English#Turing is often ___ the father of modern computing#Threw#Reduced#Considered#Combed#C#3
+English#___ is a field of education that depends on the information technology and instructional systems#Social media#Mobile game#Distance education#Virtual reality#C#2
+English#Computers can do a wide variety of things because they can be ___#Programmed#Twisting#Programming#Twisted#A#3
+English#Turing developed a machine ___ helped break the code#Where#Which#Who#Why#B#5
+English#___ is entirely decentralized, meaning there is no central authority regulating it#Bank#Stock market#Diesel fuel#Cryptocurrency#D#4
+English#The new boss is called Sarah, have you met ___?#him#her#them#he#B#1
+English#he plays soccer…..#in Wednesdays#on Wednesdays#at Wednesdays#by Wednesdays#B#2
+English#When Sam was a small child, he ___ spend hours every day playing with stones in the garden.#would#used#was#should#A#3
+English#Please don't forget to ring me when you ___ home. #are going to get#will get#are getting#get#D#4
+English#Can you believe it? A woman has been ___ for hacking into the computer of her online virtual husband. #accused#suspended#arrested#suspected#C#5
+English#Angela Merkel ___ a woman politician.#are#was#is#has been#C#1
+English#We ___ go climbing on Everest , but now we can not going to there beucase of old age.#have to#using to#used to#used been to#C#2
+English#We ___ draw some money before the bank closes.#has to#have to#had been to#has been to#B#3
+English#Egyptian pyramids ___ by slaves.#is made#was made#are made#were made#D#4
+English#He ___ hard for the TOEFL before he passed it.#have been studying#has been working#had been flying#had been studying#D#5
+Computer#Which of the following is not a computer unit?#Keyboard#Screen#Mouse#Typewriter#D#1
+Computer#Which Computer Unit Performs all Mathematical and Logical Functions?#Control Unit#Central Processing Unit (CPU)#Storage Unit#Arithmetic Logic Unit (ALU)#B#2
+Computer#Which of the following is not a operating system?#Windows XP#Linux#Pardus#Microsoft Office#C#3
+Computer#Who is the Father of the Computer?#Dennis Ritchie#Reed Ghazala#Charles Babbage#Anders Hejlsberg#C#4
+Computer#When was the first mouse invented?#1964#1965#1976#1999#A#5
+Computer#What is called the explanatory statements within a program?#Comment#Expression#Term#Statement#A#1
+Computer#What is shortcut of the copy operation on keyboard?#Ctrl+v#Ctrl+x#Ctrl+c#Ctrl+w#C#2
+Computer#Which of the following is right?#GB>MB>KB#MB>KB>GB#MB>GB>KB#GB>KB>MB#A#3
+Computer#Which of the following makes smaller all letters in a string in Python?#upper()#lstrip()#strip()#lower()#D#4
+Computer#The circuitry in a computer that controls the manipulation of data is called ___.#GPU#CPU#RAM#HDD#B#5
+Computer#Who is the person who designed the programming language called Fortran?#Dennis Ritchie#John Backus#Yukihiro Matsumoto#Guido van Rossum#B#5
+Computer#Which of the following is not one of the 10 most popular programming languages in the world according to PYPL January 2022 data?#C++#Swift#JavaScript#Go#D#3
+Computer#Which is the computer device that was first made of wood by Douglas Engelbart in 1964?#Keyboard#Mouse#Printer#Monitor#B#4
+Computer#Larry Page and Sergey Brin are entrepreneurs who are known as the founders of which large technology company?#Microsoft#Apple#Google#IBM#C#2
+Computer#Which of the following colors is not present in the Windows logo?#Purple#Green#Yellow#Blue#A#1
+Computer#___ is a machine that can automatically perform a series of arithmetic or logic operations commanded programmatically.Complete the text above?#Computer#Calculator#Fountain Pen#Tractor#A#1
+Computer#Which of the following is one of the platforms used for dynamic web interfaces or computations?#Photoshop#Java Script#Android Studio#Excel#B#2
+Computer#What is the name given to the system administrator?#Alias#Administrator#App#User#B#3
+Computer#Spring Framework is an open source ..... platform developed by Rod Johnson.Complete the text above.#Angular#C#Python#Java#D#4
+Computer#The execution of each given command by the code blocks translated into machine language is called the instruction cycle.What does decode mean then?#Recalls the next order from memory.#Decipher the meaning of the order.#It stores the result of the operation performed.#It executes the order and makes the transaction.#B#5
+Computer#Which of the following structures is different from the others?#repeat-until#do-while#case#for#C#3
+Computer#Which is not an object oriented programming language?#Python#Java#Visual Basic#C#D#4
+Computer#Which of the following is not a file type used to store image-style data?#bmp#png#avi#jpg#C#1
+Computer#Which is considered to be the computers short-term memory?#RAM#RIM#ROM#REM#A#2
+Computer# What does GUI stand for....?#Geographical User Interruption#Gain Upper Intenstiy#Graphical User Interim#Graphical User Interface#D#5
+Computer#who is known as the father and founder of the java programming language?#Grace Hopper#Dennis Ritchie#James Gosling#Linus Torvalds#C#4
+Computer#When was the first portable computer manufactured?#Camillo Olivetti#Siemens Nixdorf#Lee Byung-chul#Toshio Ikeda#B#5
+Computer#How are CPU and main memory access connected?#Bridge#Key#Gate#Bus#D#2
+Computer#When a key is pressed on the keyboard, which standard is used for converting the keystroke into the corresponding bits?#ANSI#ASCII#EBDCIC#ISO#B#3
+Computer#Servers are computers that provide resources to other computers connected to ___.#Servers#Super Computers#Client#Laptops#A#3
+Computer#The programming language C++ created by ___.#Bill Gates#Bjarne Strousturp#James Gosling#Anders Hejlsberg#B#1
+Computer#Python is a _ language#compiler#interpreter#collector#holder#B#5
+Computer#When you want to connect two compatible networks, you should use_.#Bridge#Repeater#Switch#Router#A#4
+Computer#___ is used to send control signals and data between the processor and other components#Motherboard#CPU#Register#Bus#D#3
+Computer#___ introduced the PC in 1981#Microsoft#Apple#IBM#Intel#C#2
+Mathematics#What is the sum of interior angles of the triangle?#360#90#180#270#C#1
+Mathematics#What is the name of the longest side of triangle?#tangent#hypotenuse#vertical#pythagoras#B#2
+Mathematics#A coin is tossed three times.What is the probability of getting heads?#1/8#1/16#3/8#5/6#A#3
+Mathematics#What is the result of √64+√25?#89#13#17#9#B#4
+Mathematics#If 3x^2=12,what is the result of 3x+5?#14#8#15#11#D#5
+Mathematics#What number is subtracted from 1000 to get 777?#333#233#323#223#D#1
+Mathematics#What will be the result if two times two is subtracted from three times three?#1#2#5#23#C#2
+Mathematics#Which of the following cannot be the probability of an event A occurring?#0#1/2#1#5/2#D#3
+Mathematics#What is zero to the power of zero?#1#0#undefined#infinite#C#4
+Mathematics#In a minibus where 1.75 dollar is charged from each passenger, the driver asks "is 20 dollar for 6 people?" If he gets a positive answer to the question, how much change should he give?#9 dollar 50 cent#7 dollar 50 cent#8 dolar 75 cent#10 dollar 50 cent#A#5
+Mathematics#What is the period of sinus function?#​2π #​π #​π/2 ​#​π/4 #A#1
+Mathematics#Which length is different from others?#2 kilometers#200 decameters#2000 decimeters#200,000 centimeters#C#2
+Mathematics#What is the result of 1 million x 1 million?10 billion#100 billion#1 trillion#10 trillion#100 million#C#3
+Mathematics#An ___ matrix is a matrix which, when multiplied by itself, yields itself.#signatue#idempotent#identity#equivalent#B#4
+Mathematics#___search starts at the tree root and explores all nodes at the present depth prior to moving on to the nodes at the next depth level.#bread first#depth first#linear#binary#A#5
+History#Whose death sparked World War I?#Kaiser Wilhelm#Archbishop Ussher#Queen Victoria#Archduke Franz Ferdinand#D#1
+History#In which city would you find the Statue of Liberty?#Paris#New York City#Rome#Istanbul#B#2
+History#Which of these countries did the Soviet Union NEVER invade?#Afghanistan#Finland#Poland#Sweden#D#3
+History#Which government building was stormed by revolutionary citizens on July 14th 1789?#The Tuileries#The Palace of Versailles#The Champ de Mars#The Bastille#D#4
+History#"Let them eat cake" was a phrase mistakenly attributed to which French Revolution figure?#Napoleon Bonaparte#Marie Antoinette#Maximilien Robespierre#Louis XIV#B#4
+History#Which of these important figures of the French Revolution was NOT guillotined?#Maximilien Robespierre#Marquis de Lafayette#Louis XVI#Marie Antoinette#B#5
+History#Maximilien Robespierre and other radical revolutionaries belonged to which political club?#The Dominicans#The Brissotins#The Jacobins#The Parisiennes#C#4
+History#Which of the following is not one of the uses of Ziggurat?#Observatory#School#Temple#Palace#D#1
+History#Anatolia; It has hosted many cultures throughout history due to reasons such as being on migration and trade routes, connecting two continents, having a favorable climate and fertile lands.According to this information, which of the following can not be said about Anatolia?#It is suitable for habitation#It has rich underground resources#Cultural interaction is intense#It is suitable for agriculture#B#2
+History#Civilians accounted for nearly half of the human casualties in the Second World War.Which of the following could be attributed to this situation?#Because of the fact that the war was limited between the big states#From the creation of civil defense organizations#the use of weapons of mass destruction#the occurrence of natural disasters#C#3
+History#Which of the following is one of the cavalry units of the Kapıkulu Hearths in the Ottoman army?#Janissaries#sewers#Artillery#Gunmen#D#4
+History#Which of the following is not one of the leaders who guided their country during the Second World War?#Adolf Hitler#John F Kennedy#Benito Mussolini#Winston Churchill#B#5
+History#World War I began in__#1923#1908#1917#1914#D#1
+History#What famous 5th century A.D conqueror was known as 'The Scourge of God?'#Hannibal#Julius Caesar#William the Conqueror#Atilla the Hun#D#2
+History#The Hundred Years War was fought between what two countries?#Italy and France#England and Germany#France and England#Spain and France#C#4
+History#In 1594, William Shakespeare joined the company of this London theatre.#Broadway#The Globe#Oxford University Theatre#The London Palladium#B#5
+History#The disease that ravaged and killed a third of Europe's population in the 14th century is known as#The Bubonic Plague#Smallpox#The Black Plague#The White Death#A#3
+History#Who was Prime Minister of Great Britain for most of the Second World War?#Winston Churchill#Stanley Baldwin#Clement Attlee#Ramsay McDonald#A#2
+History#In what year was the Russian Revolution?#1915#1916#1917#1918#C#4
+History#Korea was split into North Korea and South Korea at the conclusion of which war?#World War One#World War Two#Vietnam War#Korean War#B#5
+History#In which year was the Berlin wall removed?#1988#1989#1990#1991#B#4
+History#Who was the first president of Turkey?#Celal Bayar#Enver Pasa#Kemal Ataturk#Ismet Inonu#D#1
+Physics#Who is the first to discover the neutron in history?#James Chadwick#J.J. Thomson#Rutherford#Bohr#James Chadwick#1
+Physics#What is the unit of Astronomical Distance?#Light year#Angstrom#Weber#Lux#Light year#1
+Physics#Elecronegativity is the measure of#Metallic character#Basic Character#Non-metallic character#None of these#Non-metallic character#3
+Physics#An artificial Satellite revolves round the Earth in circular orbit, which quantity remains constant?#Angular Momentum#None of these#Linear Velocity#Angular Displacement#Angular Momentum#5
+Physics#If electrical conductivity increases with the increase of temperature of a substance, then it is a:#Semiconductor#Insulator#Conductor#Carborator#Semiconductor#4
+Physics#Which one of the following has the highest value of specific heat ?#Alcohol#Kerosene#Methane#Water#Water#2
+English#Which is the past participle form of choose?#Choose#Chose#Chosen#Choosed#C#2
+Computer#___ is NOT a component of a CPU.#Register#Clock#Memory#Control Unit#C#1
+History#Which empire had the most land area in history?#Mongol Empire#Russian Empire#Ottoman Empire#British Empire#D#4
+Mathematics#Sir Isaac Newton invented ___ when he was 24.#Prime Number Theorem#Calculus#Polyhedron Formula#The Perfect Number Theorem#B#3
+Physics#Which particle is a boson?#Proton#Neutron#Electron#Photon#D#5
+English#Do you know antonyms of commissioned?#Closed#Terminated#Finished#Started#B#1
+Computer#__combines internet technology with concept of linked-documents#Browsers#Webservers#URL#Hypertext#D#5
+Literature#Who wrote 'War and Peace'?#Leo Tolstoy#Charles Dickens#William Shaespeare#William Wordsworth#A#2
+History#How many days in a week were there in ancient Roman times?#8#7#6#5#A#3
+Biology#Other than spreading malaria, anopheles mosquitoes are also vectors of ___.#dengue fever#filariasis#encephalities#yellow fever#B#3
+Literature#Who is the writer of 1984?#George Orwell#Aldous Huxley#Ray Bradbury#Harper Lee#A#2
+Astronomy#What is that biggest satellite of the Solar System ?#Io#Ganymede#Europa#Callisto#B#3
+Computer#In which memory is the information stored temporarily ?#Memory card #Hard disk#Rom#Ram#D#1
+Computer#Father of C programming language#Dennis Ritchie #Prof Jhon Kemeny#Thomas Kurtz #Bill Gates#A#4
+Computer#The lowest form of Computer language is called#BASIC#FORTRAN#Machine Language#COBOL#C#2
+Computer#Program execution time would be minimum if the programs are written in ___#Assembly language#High level language#Machine language#None of the above#C#3
+Computer#An internet like network within a company. The best fit will be ___#Intranet technology resources#Applications of intranets#Intranets#Extranets#C#5
+Computer#HTML is a ___#Internet Language#Programming Language#Markup Language#Artificial Intelligence Language#C#2
+Computer#The error in a program is called ___#bug#lapse#mistake#flaw#A#1
+English#What does the word loquacious mean?#Angry#Chatty#Beatiful#Shy#B#4
+Music#Which of these is a musical instrument?#mandrake#mandalay#mandolin#mandrill#C#2
+Music#Which of these is a musical instrument?#Dilruba#Dilbar#Dil#Dilli#A#5
+Music#Which of these instruments has "ni" discernible pitch?#Cymbal#Flute#Sitar#Harp#A#3
+Music#Which of these began in Detroit, Michigan?#Motown#Jazz#Barong#La bamba#A#4
+English#She visited Japan ..... 7th July.#in#on#at#-#B#1
+Turkish#Which is synonymous with "farming"?#Science#Philosophy#Culture#Art#C#3
+English#Professionals ___ teachers and lawyers should have good communication skills..#Such like#Such as#As#Like#B#2
+Computer#The first part of a machine language instruction that specifies the operation to be performed is called a(n)___.#Opcode#Operand#Register#Bus#A#3
+Mathematics#An octagon has a total of ___ diagonals.#17#18#19#20#D#2
+Physics#The number .00005600 has ___ sig figs.#4#8#9#2#A#1
+History#Socrates was sentenced to death for ___ .#Stealing#Homicide#Corrupting Athenian youth#Fraud#C#3
+Computer#When and where was Google founded?#1980-New York#1998-California#1991-Illinois#2001-Washington#B#5
+Computer#What key combination is the shortcut for undo on computer?#CTRL+Z#CTRL+Y#SHIFT+Z#ALT+Y#A#2
+Mathematics#Which number is closer to the product of the euler number and the pi number?#6#7#8#9#D#3
+English#Which phrasal verb means cancelling?#Call something off#Turn something off#Make something off#Turn something down#A#4
+English#Which statement is grammatically true?#Why did you leave without me? You must have waited for me#Why did you leave without me? You had to wait for me#Why did you leave without me? You should have waited for me#Why did you leave without me? You should wait for me#C#3
+Computer#Who is also know as the father of Indıan Supercomputing?#Ragunath Mashelkar#Vijay Bhatkar#Jayant Narlikar#Nandan Nilekani#B#5
+English#We arrived _ England two days ago.#to#in#on#at#B#2
+History#American involvement in the Korean War took place in which decade?#1920s#1950s#1970s#1980s#B#4
+History#Who was captain of the Titanic when it sank on April 15, 1912?#Reb Brown#Brain Bloom#Edward Smith#Matthew Mercer#C#5
+History#Rome was founded in which year?#1 BC#251 BC#753 BC#2000 BC#C#5
+Computer#Which of the following is a program file extension in the Windows operating system?#png#txt#exe#xls#C#2
+Mathematics#Which number is not in the Fibonacci Sequence?#21#55#13#35#D#1
+English#What is the longest word in English dictionary?#Pneumonoultramicroscopicsilicovolcanoconiosis#Train#Exaggeration#Selflessness#A#1
+Computer#Which one of these applications is not a game engine?#Unity#Unreal Engine#Eclipse#Godot#C#2
+Computer#Which of the following is not a primary data storage unit?#ADSL#Hard disk#Disket#DVD#A#2

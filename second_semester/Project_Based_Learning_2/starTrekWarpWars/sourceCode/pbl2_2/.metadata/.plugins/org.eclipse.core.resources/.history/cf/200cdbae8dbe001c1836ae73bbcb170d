@@ -1,0 +1,66 @@
+public class Computer {
+	private Coordinate computerCoordinate;
+	private int cScore;
+	private char[][] maze;
+	private boolean isMoving;
+	
+	public Computer(Coordinate computCoordinate, int cScore, char[][] maze, boolean isMoving ) {
+		this.computerCoordinate = computCoordinate;
+		this.cScore = cScore;
+		this.maze = maze;
+		this.isMoving = isMoving;
+	}
+
+	
+
+
+	public boolean isMoving() {
+		return isMoving;
+	}
+
+
+
+
+	public void setMoving(boolean isMoving) {
+		this.isMoving = isMoving;
+	}
+
+
+
+
+	public char[][] getMaze() {
+		return maze;
+	}
+
+
+
+	public void setMaze(char[][] maze) {
+		this.maze = maze;
+	}
+
+
+
+	public Coordinate getComputerCoordinate() {
+		return computerCoordinate;
+	}
+
+
+
+	public void setComputerCoordinate(Coordinate computerCoordinate) {
+		this.computerCoordinate = computerCoordinate;
+	}
+
+
+	public int getcScore() {
+		return cScore;
+	}
+
+	public void setcScore(int cScore) {
+		this.cScore = cScore;
+	}
+
+	
+	
+	
+	
+}

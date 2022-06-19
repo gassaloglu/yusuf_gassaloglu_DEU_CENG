@@ -1,0 +1,50 @@
+package pbl;
+//participant class it retrieves participants
+public class Participant {
+	//attributes
+	private String name;     
+	private Date birthDate;
+	private String phoneNumber;
+	private Address address;
+	private Boolean isPlayed;
+	
+	//Constructor
+	public Participant(String name, Date birthDate, String phoneNumber, Address address, Boolean isPlayed) {		
+		this.name = name;
+		this.birthDate = birthDate;
+		this.phoneNumber = phoneNumber;
+		this.address = address;
+		this.isPlayed = isPlayed;
+	}
+	// getters and setters
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Date getBirthDate() {
+		return birthDate;
+	}
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	public Boolean getIsPlayed() {
+		return isPlayed;
+	}
+	public void setIsPlayed(Boolean isPlayed) {
+		this.isPlayed = isPlayed;
+	}
+}

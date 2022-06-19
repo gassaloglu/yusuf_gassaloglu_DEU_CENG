@@ -1,0 +1,9 @@
+package pbl;
+
+public class CountDown {
+	Timer timer;
+
+	public CountDown() { timer = new Timer(); timer.schedule(new DisplayCountdown(), 0, 1000); }
+
+	class DisplayCountdown extends TimerTask { int seconds = 60;
+}

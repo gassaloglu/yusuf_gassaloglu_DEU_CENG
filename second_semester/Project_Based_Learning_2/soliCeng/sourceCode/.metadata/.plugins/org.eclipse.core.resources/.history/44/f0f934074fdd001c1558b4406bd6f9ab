@@ -1,0 +1,174 @@
+package columns;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class DoubleLinkedList {
+    private NodeDll head;
+    private NodeDll tail;
+
+    public DoubleLinkedList(){
+        head = null;
+        tail = null;
+    }
+
+    public void add(Object data){
+        NodeDll newNode = new NodeDll(data);
+        if (head == null){
+            head = newNode;
+            tail = newNode;
+        }
+        else{
+            newNode.setPrev(tail);
+            tail.setNext(newNode);
+            tail = newNode;
+        }
+    }
+
+    public int size(){
+        int count = 0;
+        if (head == null){
+            System.out.println("List is empty?");
+        }
+        else{
+            NodeDll temp = head;
+            while (temp != null){
+                count++;
+                temp = temp.getNext();
+            }
+        }
+        return count;
+    }
+
+    public boolean search(int number){
+        if (head == null){
+            System.out.println("List is empty!");
+        }
+        else{
+            NodeDll temp = tail;
+            while(temp != null){
+                if (number == (int)temp.getData())
+                    return true;
+                temp = temp.getPrev();
+            }
+        }
+        return false;
+    }
+
+
+    public void display1(int x, int y){
+        if (head == null){
+            System.out.println("List is empty!");
+        }
+        else{
+            NodeDll temp = head;
+            while (temp != null){
+            	Columns.console.getTextWindow().setCursorPosition(x, y);
+                System.out.println(temp.getData() + " ");
+                temp = temp.getNext();
+                y++;
+            }
+            System.out.println();
+        }
+    }
+
+    public void display2(){
+        if (head == null) {
+            System.out.println("List is empty!");
+        }
+        else{
+            NodeDll temp = tail;
+            while (temp != null){
+                System.out.print(temp.getData() + " ");
+                temp = temp.getPrev();
+            }
+            System.out.println();
+        }
+    }
+
+    public Object getElement(int x){
+        if (head == null){
+            System.out.println("List is empty!");
+            return null;
+        }
+        else if(x < 0 || x > size()){
+            System.out.println("Index is out of range!");
+            return null;
+        }
+        else{
+            NodeDll temp = head;
+            int counter = 1;
+            while (temp != null){
+                if (x == counter)
+                    return temp.getData();
+                temp = temp.getNext();
+                counter++;
+            }
+            return null;
+        }
+    }
+
+    public void swap(int x){
+        if (head == null){
+            System.out.println("List is empty!");
+        }
+        else if(x < 0 || x > size()){
+            System.out.println("Index is out of range!");
+        }
+        else{
+            int element1 = -1;
+            NodeDll temp = head;
+            int count = 1;
+            while(temp != null){
+                if (count == x){
+                    element1 = (int)temp.getData();
+                    break;
+                }
+                temp = temp.getNext();
+                count++;
+            }
+
+            int element2 = -1;
+            NodeDll temp2 = tail;
+            count = 1;
+            while (temp2 != null){
+                if (count == x){
+                    element2 = (int)temp2.getData();
+                    temp2.setData(element1);
+                    break;
+                }
+                temp2 = temp2.getPrev();
+                count++;
+            }
+            temp.setData(element2);
+        }
+    }
+
+    public void sort() {
+        if (head == null) {
+            System.out.println("List is empty!");
+        } else {
+            NodeDll current = head;
+            NodeDll index = null;
+            Object temp;
+            while(current != null){
+                index = current.getNext();
+                while(index != null){
+
+                    String[] elementsOfTheCurrentData = current.getData().toString().split(" ");
+                    String[] elementsOfTheNextData = index.getData().toString().split(" ");
+                    double currentData = Double.parseDouble(elementsOfTheCurrentData[elementsOfTheCurrentData.length - 1]);
+                    double indexData = Double.parseDouble(elementsOfTheNextData[elementsOfTheNextData.length - 1]);
+
+                    if (currentData < indexData){
+                        temp = current.getData();
+                        current.setData(index.getData());
+                        index.setData(temp);
+                    }
+                    index = index.getNext();
+                }
+                current = current.getNext();
+            }
+        }
+    }
+}

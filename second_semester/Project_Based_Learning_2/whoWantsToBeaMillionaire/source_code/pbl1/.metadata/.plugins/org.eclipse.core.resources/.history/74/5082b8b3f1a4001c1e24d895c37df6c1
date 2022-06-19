@@ -1,0 +1,35 @@
+package pbl;
+
+import java.util.concurrent.*;
+
+import static java.util.concurrent.TimeUnit.SECONDS;
+
+public class Countdown {
+	final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+    public void start() {
+
+       
+
+        final Runnable runnable = new Runnable() {
+            int countdownStarter = 20;
+
+            public void run() {
+
+                System.out.println(countdownStarter);
+                countdownStarter--;
+
+                if (countdownStarter < 0) {
+                    System.out.println("Timer Over!");
+                    scheduler.shutdown();
+                }
+            }
+            
+            
+            
+        };
+        scheduler.scheduleAtFixedRate(runnable, 0, 1, SECONDS);
+    }
+    public void stop() {
+        scheduler.shutdown();
+    }
+}

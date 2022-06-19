@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\yusuf\OneDrive\Masaüstü\pbl1\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+4109499418.index
+1866342097.index
+2201702036.index

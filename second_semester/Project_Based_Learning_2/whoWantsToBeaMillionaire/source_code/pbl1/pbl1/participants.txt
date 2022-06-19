@@ -1,0 +1,3 @@
+Mehmet TARAK#27.03.1990#+90 535 1234567#Bagdat Caddesi;No=12;Kadikoy;Istanbul;Turkiye
+Canan KAYA#14.05.1982#+90 532 7654321#Menderes Caddesi;No=15;Buca;Izmir;Turkiye
+Ece YILMAZ#25.08.51960#+90 532 1928374#Kizilay Caddesi;No=230;Kizilay;Ankara;Turkiye

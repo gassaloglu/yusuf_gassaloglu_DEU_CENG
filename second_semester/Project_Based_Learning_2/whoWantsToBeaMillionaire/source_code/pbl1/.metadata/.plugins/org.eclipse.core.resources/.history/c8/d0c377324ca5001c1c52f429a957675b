@@ -1,0 +1,55 @@
+package pbl;
+
+import java.util.concurrent.*;
+import enigma.core.Enigma;
+
+import static java.util.concurrent.TimeUnit.SECONDS;
+
+public class Countdown {
+	public static enigma.console.Console cn = Enigma.getConsole("Mouse and Keyboard");
+	final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+	public boolean timeIsUp = false;
+    public void start() {
+
+       
+
+        final Runnable runnable = new Runnable() {
+            int countdownStarter = 20;
+
+            public void run() {
+
+            	if (countdownStarter >= 10) {
+            		cn.getTextWindow().setCursorPosition(50, 5);
+            		System.out.println(countdownStarter);
+                    countdownStarter--;
+	  	            cn.getTextWindow().setCursorPosition(0, 9);
+
+				}
+            	else {
+            		cn.getTextWindow().setCursorPosition(50, 5);
+            		System.out.println(" " +countdownStarter);
+            		countdownStarter--;
+	  	            cn.getTextWindow().setCursorPosition(0, 9);
+
+				}
+                
+
+                if (countdownStarter < 0) {
+                	timeIsUp = true;
+    				cn.getTextWindow().setCursorPosition(50, 5);
+                    System.out.println("Time is Over!");
+                    scheduler.shutdown();
+	  	            cn.getTextWindow().setCursorPosition(0, 9);
+
+                }
+            }
+            
+            
+            
+        };
+        scheduler.scheduleAtFixedRate(runnable, 0, 1, SECONDS);
+    }
+    public void stop() {
+        scheduler.shutdown();
+    }
+}

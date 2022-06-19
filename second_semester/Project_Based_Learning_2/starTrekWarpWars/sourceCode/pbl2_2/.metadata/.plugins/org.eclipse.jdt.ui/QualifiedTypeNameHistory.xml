@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="enigma.core.Enigma"/>
+    <fullyQualifiedTypeName name="pbl2.StarTrek"/>
+    <fullyQualifiedTypeName name="pbl2.Number"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.lang.Character"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="javax.security.auth.SubjectDomainCombiner"/>
+    <fullyQualifiedTypeName name="pbl2.Player"/>
+    <fullyQualifiedTypeName name="pbl2.Computer"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="javax.lang.model.util.Elements"/>
+    <fullyQualifiedTypeName name="pbl2.Coordinate"/>
+    <fullyQualifiedTypeName name="enigma.console.TextAttributes"/>
+    <fullyQualifiedTypeName name="pbl2.CircularQueue"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="javax.sound.sampled.AudioSystem"/>
+    <fullyQualifiedTypeName name="javax.sound.sampled.Clip"/>
+</qualifiedTypeNameHistroy>

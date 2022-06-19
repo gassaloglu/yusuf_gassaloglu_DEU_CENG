@@ -1,0 +1,65 @@
+package pbl2;
+
+public class Computer {
+	private Coordinate computerCoordinate;
+	private int cScore;
+	private int aimPlayer; 
+	private char[][] maze;
+	
+	public Computer(Coordinate computCoordinate, int cScore, int aimPlayer , char[][] maze ) {
+		this.computerCoordinate = computCoordinate;
+		this.cScore = cScore;
+		this.aimPlayer = aimPlayer;
+		this.maze = maze;
+	}
+
+
+
+	public int getAimPlayer() {
+		return aimPlayer;
+	}
+
+
+
+	public char[][] getMaze() {
+		return maze;
+	}
+
+
+
+	public void setMaze(char[][] maze) {
+		this.maze = maze;
+	}
+
+
+
+	public void setAimPlayer(int aimPlayer) {
+		this.aimPlayer = aimPlayer;
+	}
+
+
+
+	public Coordinate getComputerCoordinate() {
+		return computerCoordinate;
+	}
+
+
+
+	public void setComputerCoordinate(Coordinate computerCoordinate) {
+		this.computerCoordinate = computerCoordinate;
+	}
+
+
+	public int getcScore() {
+		return cScore;
+	}
+
+	public void setcScore(int cScore) {
+		this.cScore = cScore;
+	}
+
+	
+	
+	
+	
+}

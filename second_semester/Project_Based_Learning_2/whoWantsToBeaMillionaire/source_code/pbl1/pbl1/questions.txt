@@ -1,0 +1,10 @@
+English#There are ___ on the word Web.#a few pages#hundreds of pages#thousands of pages#billions of pages#D#1
+English#What is another word for applitacions in computer engineering?#Face makeup#CV submission#Peripherals#Programs#D#4
+English#One of the advantages word of Information Technology is ___#Strength#Speed#Accurate#Test#B#1
+English#One of the applications word of Information Technology is ___#Health issue#Health problem#Health care#Health smart#C#4
+English#All of these are applications in Information Technology except#Administration#Education#Internet#Business#C#4
+English#____ are additional computer components such as printers and scanners.#Supplements#Peripherals#Add ons#Extras#B#4
+Computer#What does RAM stand for?#Review Admittance Monitor#Review Admittance Memory#Random Access Memory#Random Access Monitor#C#4
+Computer#Three types of multiple user computers are super word computer, server and ___.#mainframe#attributes#database#utility#A#1
+Mathematics#A die is tossed three times. What is the probability of getting an odd number at least once?#7/16#7/8#1/16#7/5#B#4
+Mathematics#The eigen values of a skew-symmetric matrix are#always zero#always pure imaginary#either zero or pure imaginary#always real#C#4
