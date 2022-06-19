@@ -1,0 +1,287 @@
+package columns;
+
+import enigma.console.Console;
+
+public class MultiLinkedList {
+	private ColumnNode head;
+	
+	public void addColumn(String dataToAdd) {
+		if (head == null) {
+			ColumnNode newNode = new ColumnNode(dataToAdd);
+			head = newNode;
+		}
+		else {
+			ColumnNode temp = head;
+			while (temp.getDown() != null) {
+				temp = temp.getDown();
+			}
+			
+			ColumnNode newNode = new ColumnNode(dataToAdd);
+			temp.setDown(newNode);
+		}
+	}
+	public CardNumberNode search2(int columnNumber,int columnIndex) {
+		ColumnNode temp=head;
+		int count=0;
+		while(count<columnNumber) {
+			temp=temp.getDown();
+			count++;
+		}
+		count=0;
+		CardNumberNode output;
+		CardNumberNode temp2=temp.getRight();
+		if (columnIndex == 0) {
+			output = temp.getRight();
+			temp.setRight(null);
+			return output;
+		}
+		else {
+			while(count<columnIndex-1) {
+				temp2=temp2.getNext();
+				count++;
+			}
+			output = temp2.getNext();
+			temp2.setNext(null);
+			return output;
+		}
+	}
+	public void addCard(String column, int cardNumber) {
+		if (head == null) {
+			System.out.println("!! ERROR !! Add column !!");
+		}
+		else {
+			ColumnNode temp = head;
+			while (temp != null) {
+				if (column.equalsIgnoreCase(temp.getColumnNumber())) {
+					CardNumberNode temp2 = temp.getRight();
+					if (temp2 == null) {
+						CardNumberNode newNode = new CardNumberNode(cardNumber);
+						temp.setRight(newNode);
+					}
+					else {
+						while (temp2.getNext() != null) {
+							temp2 = temp2.getNext();
+						}
+						CardNumberNode newNode = new CardNumberNode(cardNumber);
+						temp2.setNext(newNode);
+					}
+				}
+				temp = temp.getDown();
+			}
+		}
+	}
+	public int nodeCounter(CardNumberNode temp) {
+		int count=0;
+		while(temp!=null) {
+			temp=temp.getNext();
+			count++;
+		}
+		return(count);
+	}
+	public int lastData(int columnNumber,int columnIndex) {
+		ColumnNode temp=head;
+		int count=0;
+		while(count<columnNumber) {
+			temp=temp.getDown();
+			count++;
+		}
+		count=0;
+		CardNumberNode temp2=temp.getRight();
+		if (columnIndex == 0) {
+			return 0;
+		}
+		else {
+			while(count<columnIndex-1) {
+				temp2=temp2.getNext();
+				count++;
+			}
+			return temp2.getCardNumber();
+		}
+	}
+	public CardNumberNode takeData(int columnNumber,int columnIndex) {
+		ColumnNode temp=head;
+		int count=0;
+		while(count<columnNumber) {
+			temp=temp.getDown();
+			count++;
+		}
+		count=0;
+		CardNumberNode temp2=temp.getRight();
+			while(count<columnIndex-1) {
+				temp2=temp2.getNext();
+				count++;
+			}
+			return temp2;
+	}
+	public int columnCount() {
+		int count = 0;
+		if (head == null) {
+			System.out.println("Linked list is empty");
+		}
+		else {
+			ColumnNode temp = head;
+			while (temp != null) {
+				count++;
+				temp = temp.getDown();
+			}
+		}
+		return count;
+	}
+	
+	public int columnSize(int index) {
+		int count = 0;
+		if (head == null) {
+			System.out.println("Linked list is empty");
+		}
+		/*else if (index >= this.columnCount()) {
+			System.out.println("Out of range");
+		}*/
+		else {
+			ColumnNode temp = head;
+			for (int i = 0; i < index; i++) {
+				temp = temp.getDown();
+			}
+			CardNumberNode selectedColumn = temp.getRight();
+			
+			
+			if (selectedColumn != null) {
+				while (selectedColumn != null) {
+					count++;
+					selectedColumn = selectedColumn.getNext();
+				}
+			}
+		}
+		return count;
+	}
+	
+	public void display() {
+		if (head == null) {
+			System.out.println("List is empty!!");
+		}
+		else {
+			ColumnNode temp = head;
+			int xAxis = 12 , yAxis = 6; // to print column by column
+			while (temp != null) {
+				Columns.console.getTextWindow().setCursorPosition(xAxis, yAxis);
+				//System.out.print(temp.getColumnNumber());
+				System.out.println();
+				yAxis++;
+				CardNumberNode temp2 = temp.getRight();
+				while (temp2 != null) {
+					Columns.console.getTextWindow().setCursorPosition(xAxis, yAxis);
+					Columns.setBackgroundColor(Columns.randomNumber(1, 10)/10, Columns.randomNumber(1, 10)/10), Columns.randomNumber(1, 10)/10);
+					System.out.println(temp2.getCardNumber());
+					temp2 = temp2.getNext();
+					yAxis++;
+				}
+				temp = temp.getDown();
+				
+				xAxis += 25;yAxis = 6;
+				System.out.println();
+			}
+		}
+		Columns.setBackgroundColor(0.03, 0.49, 0.53);
+
+
+	}
+	
+	public void clearDisplay() {
+		if (head == null) {
+			System.out.println("List is empty!!");
+		}
+		else {
+			for (int x = 0 ; x <= 120; x++) {
+				for (int y = 6; y < 37; y++) {
+					Columns.console.getTextWindow().setCursorPosition(x, y);
+					System.out.print("  ");
+				}
+			}
+		}
+		Columns.console.getTextWindow().setCursorPosition(126, 4);
+		System.out.println("   ");
+	}
+	
+	public boolean findStack(int index) {
+		if (head == null) {
+			System.out.println("List is empty!!");
+		}
+		else {
+			if (columnSize(index)>9) {
+				ColumnNode temp = head;
+				for (int i = 0; i < index; i++) {
+					temp = temp.getDown();
+				}
+				CardNumberNode selectedColumn = temp.getRight();
+				
+				if (selectedColumn.getCardNumber() == 10) {
+					CardNumberNode temp2 = selectedColumn.getNext();
+					int counter = 9;
+					while (temp2 != null) {
+						if (temp2.getCardNumber() != counter) {
+							break;
+						}
+						if ((temp2.getCardNumber() == counter)&&(counter == 1)) {
+							temp.setRight(temp2.getNext());
+							return true;
+						}
+						temp2 = temp2.getNext();
+						counter--;
+					}
+				}
+				else if (selectedColumn.getCardNumber() == 1) {
+					CardNumberNode temp2 = selectedColumn.getNext();
+					int counter = 2;
+					while (temp2 != null) {
+						if (temp2.getCardNumber() != counter) {
+							break;
+						}
+						if ((temp2.getCardNumber() == counter)&&(counter == 10)) {
+							temp.setRight(temp2.getNext());
+							return true;
+						}
+						temp2 = temp2.getNext();
+						counter++;
+					}
+				}
+				for (int i = 0; i <= columnSize(index) - 11; i++) {
+					if (selectedColumn.getNext().getCardNumber() == 10) {
+						CardNumberNode temp2 = selectedColumn.getNext().getNext();
+						int counter = 9;
+						while (temp2 != null) {
+							if (temp2.getCardNumber() != counter) {
+								break;
+							}
+							if ((temp2.getCardNumber() == counter)&&(counter == 1)) {
+								selectedColumn.setNext(temp2.getNext());
+								Columns.finishedOrderSets++; // increase the finished order sets count
+								Columns.playerScore += 1000; // increase the player score for the pattern
+								return true;
+							}
+							temp2 = temp2.getNext();
+							counter--;
+						}
+					}
+					else if (selectedColumn.getNext().getCardNumber() == 1) {
+						CardNumberNode temp2 = selectedColumn.getNext().getNext();
+						int counter = 2;
+						while (temp2 != null) {
+							if (temp2.getCardNumber() != counter) {
+								break;
+							}
+							if ((temp2.getCardNumber() == counter)&&(counter == 10)) {
+								selectedColumn.setNext(temp2.getNext());
+								Columns.finishedOrderSets++; // increase the finished order sets count
+								Columns.playerScore += 1000; // increase the player score for the pattern
+								return true;
+							}
+							temp2 = temp2.getNext();
+							counter++;
+						}
+					}
+					selectedColumn = selectedColumn.getNext();
+				}
+			}
+		}
+		return false;
+	}
+}
