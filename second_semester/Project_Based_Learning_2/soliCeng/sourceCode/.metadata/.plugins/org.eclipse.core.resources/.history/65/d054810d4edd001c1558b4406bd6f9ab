@@ -1,0 +1,12 @@
+package columns;
+
+
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
+
+public class ColumnsTest {
+	public static void main(String args[]){
+		Columns c = new Columns();
+	}
+}
