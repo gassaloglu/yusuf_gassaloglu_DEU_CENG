@@ -1,0 +1,165 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\yusuf\OneDrive\Masaüstü\lab1\simulation\qsim
+vyusuf_gassaloglu_2020510034_HW1_a
+Z1 !s100 3<AlTNe3Q3_glPbOU0I4j0
+Z2 IL[ZV7in>Zio]<0EdVS9dn1
+Z3 VcEdWdHQYVDI>@kk@K5>UO2
+Z4 dC:\Users\yusuf\OneDrive\Masaüstü\lab1\simulation\qsim
+Z5 w1678011712
+Z6 8yusuf_gassaloglu_2020510034_HW1.vo
+Z7 Fyusuf_gassaloglu_2020510034_HW1.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|yusuf_gassaloglu_2020510034_HW1.vo|
+Z10 o-work work -O0
+Z11 nyusuf_gassaloglu_2020510034_@h@w1_a
+Z12 !s108 1678011713.361000
+Z13 !s107 yusuf_gassaloglu_2020510034_HW1.vo|
+!i10b 1
+!s85 0
+!s101 -O0
+vyusuf_gassaloglu_2020510034_HW1_a_vlg_check_tst
+Z14 !s100 [k4ZVKhVWi17O6z^Fe<[C0
+Z15 IJQoVoERFMh7X?<a]ajC^k2
+Z16 V`ZE>kiPz^>z[JHHaDMIgm2
+R4
+Z17 w1678011711
+Z18 8yusuf_gassaloglu_2020510034_HW1_a.vwf.vt
+Z19 Fyusuf_gassaloglu_2020510034_HW1_a.vwf.vt
+L0 69
+R8
+r1
+31
+Z20 !s108 1678011713.426000
+Z21 !s107 yusuf_gassaloglu_2020510034_HW1_a.vwf.vt|
+Z22 !s90 -work|work|yusuf_gassaloglu_2020510034_HW1_a.vwf.vt|
+R10
+Z23 nyusuf_gassaloglu_2020510034_@h@w1_a_vlg_check_tst
+!i10b 1
+!s85 0
+!s101 -O0
+vyusuf_gassaloglu_2020510034_HW1_a_vlg_sample_tst
+Z24 !s100 _0lGaX<fW0HXbIBkI;_6<0
+Z25 IT_`;aP3@::@_i8nPJIdXl2
+Z26 VT;83ISDdJLPa8A]Mizj830
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+31
+R20
+R21
+R22
+R10
+Z27 nyusuf_gassaloglu_2020510034_@h@w1_a_vlg_sample_tst
+!i10b 1
+!s85 0
+!s101 -O0
+vyusuf_gassaloglu_2020510034_HW1_a_vlg_vec_tst
+Z28 IH@aA8o@>4hV^1<l6HMW6<1
+Z29 VVHaLm`8QV70Jk=jdicCY:3
+R4
+R17
+R18
+R19
+Z30 L0 272
+R8
+r1
+31
+R20
+R21
+R22
+R10
+Z31 nyusuf_gassaloglu_2020510034_@h@w1_a_vlg_vec_tst
+Z32 !s100 g8T4C9E<:7j5MAcGVZZD00
+!i10b 1
+!s85 0
+!s101 -O0
+vyusuf_gassaloglu_2020510034_HW1_b
+Z33 !s100 EoGP2jNZzlke<Rkz0n@[T0
+Z34 I?XBXECOzHK:fmo9dBDOVR1
+Z35 V?mmXC3m@jkP6iO<^=<eI_1
+R4
+Z36 w1678014507
+R6
+R7
+L0 31
+R8
+r1
+31
+R9
+R10
+Z37 nyusuf_gassaloglu_2020510034_@h@w1_b
+!i10b 1
+!s85 0
+Z38 !s108 1678014508.055000
+R13
+!s101 -O0
+vyusuf_gassaloglu_2020510034_HW1_b_vlg_check_tst
+!i10b 1
+Z39 !s100 Bc;<;lZO;hIg2E3@H=XIh1
+Z40 IOgH4Q5O;563jI@B=XAMJF1
+Z41 V]WFBTni_MYknmiX5J^T6F0
+R4
+Z42 w1678014506
+Z43 8yusuf_gassaloglu_2020510034_HW1_b.vwf.vt
+Z44 Fyusuf_gassaloglu_2020510034_HW1_b.vwf.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z45 !s108 1678014508.124000
+Z46 !s107 yusuf_gassaloglu_2020510034_HW1_b.vwf.vt|
+Z47 !s90 -work|work|yusuf_gassaloglu_2020510034_HW1_b.vwf.vt|
+!s101 -O0
+R10
+Z48 nyusuf_gassaloglu_2020510034_@h@w1_b_vlg_check_tst
+vyusuf_gassaloglu_2020510034_HW1_b_vlg_sample_tst
+!i10b 1
+Z49 !s100 Tb:CRz4BLdzF6SBk@IJPS1
+Z50 IeeU;9ljc:>OH3hd8^365E3
+Z51 Vm?Z96l6UEMJT=CazT:G673
+R4
+R42
+R43
+R44
+L0 29
+R8
+r1
+!s85 0
+31
+R45
+R46
+R47
+!s101 -O0
+R10
+Z52 nyusuf_gassaloglu_2020510034_@h@w1_b_vlg_sample_tst
+vyusuf_gassaloglu_2020510034_HW1_b_vlg_vec_tst
+!i10b 1
+!s100 ^h2oeGoXYbo;hcmLjjbAG1
+I1T]Fh0CL=2n7]dEXK]3hk3
+Z53 VB0hHlK>QN5OARW9`Mjkaf2
+R4
+R42
+R43
+R44
+Z54 L0 238
+R8
+r1
+!s85 0
+31
+R45
+R46
+R47
+!s101 -O0
+R10
+Z55 nyusuf_gassaloglu_2020510034_@h@w1_b_vlg_vec_tst

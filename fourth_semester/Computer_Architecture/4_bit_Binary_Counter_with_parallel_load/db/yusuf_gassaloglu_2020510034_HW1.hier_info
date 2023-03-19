@@ -1,0 +1,90 @@
+|yusuf_gassaloglu_2020510034_HW1_b
+carry <= yusuf_gassaloglu_lpm_counter:inst.cout
+load => yusuf_gassaloglu_lpm_counter:inst.sload
+clock => yusuf_gassaloglu_lpm_counter:inst.clock
+count => yusuf_gassaloglu_lpm_counter:inst.cnt_en
+d[3] => yusuf_gassaloglu_lpm_counter:inst.data[0]
+d[2] => yusuf_gassaloglu_lpm_counter:inst.data[1]
+d[1] => yusuf_gassaloglu_lpm_counter:inst.data[2]
+d[0] => yusuf_gassaloglu_lpm_counter:inst.data[3]
+q[0] <= yusuf_gassaloglu_lpm_counter:inst.q[0]
+q[1] <= yusuf_gassaloglu_lpm_counter:inst.q[1]
+q[2] <= yusuf_gassaloglu_lpm_counter:inst.q[2]
+q[3] <= yusuf_gassaloglu_lpm_counter:inst.q[3]
+
+
+|yusuf_gassaloglu_2020510034_HW1_b|yusuf_gassaloglu_lpm_counter:inst
+clock => lpm_counter:LPM_COUNTER_component.clock
+cnt_en => lpm_counter:LPM_COUNTER_component.cnt_en
+data[0] => lpm_counter:LPM_COUNTER_component.data[0]
+data[1] => lpm_counter:LPM_COUNTER_component.data[1]
+data[2] => lpm_counter:LPM_COUNTER_component.data[2]
+data[3] => lpm_counter:LPM_COUNTER_component.data[3]
+sload => lpm_counter:LPM_COUNTER_component.sload
+cout <= lpm_counter:LPM_COUNTER_component.cout
+q[0] <= lpm_counter:LPM_COUNTER_component.q[0]
+q[1] <= lpm_counter:LPM_COUNTER_component.q[1]
+q[2] <= lpm_counter:LPM_COUNTER_component.q[2]
+q[3] <= lpm_counter:LPM_COUNTER_component.q[3]
+
+
+|yusuf_gassaloglu_2020510034_HW1_b|yusuf_gassaloglu_lpm_counter:inst|lpm_counter:LPM_COUNTER_component
+clock => cntr_0rj:auto_generated.clock
+clk_en => ~NO_FANOUT~
+cnt_en => cntr_0rj:auto_generated.cnt_en
+updown => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+sconst => ~NO_FANOUT~
+sload => cntr_0rj:auto_generated.sload
+data[0] => cntr_0rj:auto_generated.data[0]
+data[1] => cntr_0rj:auto_generated.data[1]
+data[2] => cntr_0rj:auto_generated.data[2]
+data[3] => cntr_0rj:auto_generated.data[3]
+cin => ~NO_FANOUT~
+q[0] <= cntr_0rj:auto_generated.q[0]
+q[1] <= cntr_0rj:auto_generated.q[1]
+q[2] <= cntr_0rj:auto_generated.q[2]
+q[3] <= cntr_0rj:auto_generated.q[3]
+cout <= cntr_0rj:auto_generated.cout
+eq[0] <= <GND>
+eq[1] <= <GND>
+eq[2] <= <GND>
+eq[3] <= <GND>
+eq[4] <= <GND>
+eq[5] <= <GND>
+eq[6] <= <GND>
+eq[7] <= <GND>
+eq[8] <= <GND>
+eq[9] <= <GND>
+eq[10] <= <GND>
+eq[11] <= <GND>
+eq[12] <= <GND>
+eq[13] <= <GND>
+eq[14] <= <GND>
+eq[15] <= <GND>
+
+
+|yusuf_gassaloglu_2020510034_HW1_b|yusuf_gassaloglu_lpm_counter:inst|lpm_counter:LPM_COUNTER_component|cntr_0rj:auto_generated
+clock => counter_reg_bit[3].CLK
+clock => counter_reg_bit[2].CLK
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+cnt_en => _.IN1
+cout <= cout_actual.DB_MAX_OUTPUT_PORT_TYPE
+data[0] => _.IN1
+data[1] => _.IN1
+data[2] => _.IN1
+data[3] => _.IN1
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= counter_reg_bit[3].DB_MAX_OUTPUT_PORT_TYPE
+sload => _.IN1
+sload => counter_reg_bit[3].IN1
+
+

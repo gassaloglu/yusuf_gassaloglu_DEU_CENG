@@ -1,0 +1,719 @@
+$comment
+	File created using the following command:
+		vcd file yusuf_gassaloglu_2020510034_HW2.msim.vcd -direction
+$end
+$date
+	Wed Mar 08 12:39:04 2023
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module yusuf_gassaloglu_2020510034_HW2_vlg_vec_tst $end
+$var reg 1 ! clk $end
+$var reg 1 " r_en_ram $end
+$var reg 1 # r_en_rom $end
+$var reg 4 $ ram_address [3:0] $end
+$var reg 4 % ram_data [3:0] $end
+$var reg 4 & rom_address [3:0] $end
+$var reg 1 ' w_en $end
+$var wire 1 ( ram_out [3] $end
+$var wire 1 ) ram_out [2] $end
+$var wire 1 * ram_out [1] $end
+$var wire 1 + ram_out [0] $end
+$var wire 1 , rom_out [10] $end
+$var wire 1 - rom_out [9] $end
+$var wire 1 . rom_out [8] $end
+$var wire 1 / rom_out [7] $end
+$var wire 1 0 rom_out [6] $end
+$var wire 1 1 rom_out [5] $end
+$var wire 1 2 rom_out [4] $end
+$var wire 1 3 rom_out [3] $end
+$var wire 1 4 rom_out [2] $end
+$var wire 1 5 rom_out [1] $end
+$var wire 1 6 rom_out [0] $end
+$var wire 1 7 sampler $end
+$scope module i1 $end
+$var wire 1 8 gnd $end
+$var wire 1 9 vcc $end
+$var wire 1 : unknown $end
+$var tri1 1 ; devclrn $end
+$var tri1 1 < devpor $end
+$var tri1 1 = devoe $end
+$var wire 1 > ram_out[3]~output_o $end
+$var wire 1 ? ram_out[2]~output_o $end
+$var wire 1 @ ram_out[1]~output_o $end
+$var wire 1 A ram_out[0]~output_o $end
+$var wire 1 B rom_out[10]~output_o $end
+$var wire 1 C rom_out[9]~output_o $end
+$var wire 1 D rom_out[8]~output_o $end
+$var wire 1 E rom_out[7]~output_o $end
+$var wire 1 F rom_out[6]~output_o $end
+$var wire 1 G rom_out[5]~output_o $end
+$var wire 1 H rom_out[4]~output_o $end
+$var wire 1 I rom_out[3]~output_o $end
+$var wire 1 J rom_out[2]~output_o $end
+$var wire 1 K rom_out[1]~output_o $end
+$var wire 1 L rom_out[0]~output_o $end
+$var wire 1 M w_en~input_o $end
+$var wire 1 N r_en_ram~input_o $end
+$var wire 1 O clk~input_o $end
+$var wire 1 P clk~inputclkctrl_outclk $end
+$var wire 1 Q ram_data[0]~input_o $end
+$var wire 1 R ram_address[0]~input_o $end
+$var wire 1 S ram_address[1]~input_o $end
+$var wire 1 T ram_address[2]~input_o $end
+$var wire 1 U ram_address[3]~input_o $end
+$var wire 1 V ram_data[1]~input_o $end
+$var wire 1 W ram_data[2]~input_o $end
+$var wire 1 X ram_data[3]~input_o $end
+$var wire 1 Y r_en_rom~input_o $end
+$var wire 1 Z rom_address[0]~input_o $end
+$var wire 1 [ rom_address[1]~input_o $end
+$var wire 1 \ rom_address[2]~input_o $end
+$var wire 1 ] rom_address[3]~input_o $end
+$var wire 1 ^ inst1|altsyncram_component|auto_generated|q_a [10] $end
+$var wire 1 _ inst1|altsyncram_component|auto_generated|q_a [9] $end
+$var wire 1 ` inst1|altsyncram_component|auto_generated|q_a [8] $end
+$var wire 1 a inst1|altsyncram_component|auto_generated|q_a [7] $end
+$var wire 1 b inst1|altsyncram_component|auto_generated|q_a [6] $end
+$var wire 1 c inst1|altsyncram_component|auto_generated|q_a [5] $end
+$var wire 1 d inst1|altsyncram_component|auto_generated|q_a [4] $end
+$var wire 1 e inst1|altsyncram_component|auto_generated|q_a [3] $end
+$var wire 1 f inst1|altsyncram_component|auto_generated|q_a [2] $end
+$var wire 1 g inst1|altsyncram_component|auto_generated|q_a [1] $end
+$var wire 1 h inst1|altsyncram_component|auto_generated|q_a [0] $end
+$var wire 1 i inst|altsyncram_component|auto_generated|q_a [3] $end
+$var wire 1 j inst|altsyncram_component|auto_generated|q_a [2] $end
+$var wire 1 k inst|altsyncram_component|auto_generated|q_a [1] $end
+$var wire 1 l inst|altsyncram_component|auto_generated|q_a [0] $end
+$var wire 1 m inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [17] $end
+$var wire 1 n inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [16] $end
+$var wire 1 o inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [15] $end
+$var wire 1 p inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [14] $end
+$var wire 1 q inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [13] $end
+$var wire 1 r inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [12] $end
+$var wire 1 s inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [11] $end
+$var wire 1 t inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [10] $end
+$var wire 1 u inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [9] $end
+$var wire 1 v inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [8] $end
+$var wire 1 w inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [7] $end
+$var wire 1 x inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [6] $end
+$var wire 1 y inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [5] $end
+$var wire 1 z inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [4] $end
+$var wire 1 { inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [3] $end
+$var wire 1 | inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [2] $end
+$var wire 1 } inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [1] $end
+$var wire 1 ~ inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [0] $end
+$var wire 1 !! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [17] $end
+$var wire 1 "! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [16] $end
+$var wire 1 #! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [15] $end
+$var wire 1 $! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [14] $end
+$var wire 1 %! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [13] $end
+$var wire 1 &! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [12] $end
+$var wire 1 '! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [11] $end
+$var wire 1 (! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [10] $end
+$var wire 1 )! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [9] $end
+$var wire 1 *! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [8] $end
+$var wire 1 +! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [7] $end
+$var wire 1 ,! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [6] $end
+$var wire 1 -! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [5] $end
+$var wire 1 .! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [4] $end
+$var wire 1 /! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [3] $end
+$var wire 1 0! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [2] $end
+$var wire 1 1! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [1] $end
+$var wire 1 2! inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+b1100 $
+b110 %
+b0 &
+1'
+0+
+0*
+0)
+0(
+06
+05
+04
+03
+02
+01
+00
+0/
+0.
+0-
+0,
+x7
+08
+19
+x:
+1;
+1<
+1=
+0>
+0?
+0@
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+0H
+0I
+0J
+0K
+0L
+1M
+0N
+0O
+0P
+0Q
+0R
+0S
+1T
+1U
+1V
+1W
+0X
+0Y
+0Z
+0[
+0\
+0]
+0h
+0g
+0f
+0e
+0d
+0c
+0b
+0a
+0`
+0_
+0^
+0l
+0k
+0j
+0i
+0~
+0}
+0|
+0{
+0z
+0y
+0x
+0w
+0v
+0u
+0t
+0s
+0r
+0q
+0p
+0o
+0n
+0m
+02!
+01!
+00!
+0/!
+0.!
+0-!
+0,!
+0+!
+0*!
+0)!
+0(!
+0'!
+0&!
+0%!
+0$!
+0#!
+0"!
+0!!
+$end
+#12500
+1!
+1O
+1P
+07
+#25000
+0!
+0O
+0P
+17
+#37500
+1!
+1O
+1P
+07
+#50000
+0!
+0O
+0P
+17
+#62500
+1!
+1O
+1P
+07
+#75000
+0!
+0O
+0P
+17
+#87500
+1!
+1O
+1P
+07
+#100000
+0!
+0O
+0P
+17
+#110000
+b100 $
+b0 $
+b10 %
+b0 %
+0'
+0V
+0W
+0T
+0U
+0M
+07
+#112500
+1!
+1O
+1P
+17
+#125000
+0!
+0O
+0P
+07
+#137500
+1!
+1O
+1P
+17
+#150000
+0!
+0O
+0P
+07
+#162500
+1!
+1O
+1P
+17
+#175000
+0!
+0O
+0P
+07
+#187500
+1!
+1O
+1P
+17
+#200000
+0!
+0O
+0P
+07
+#212500
+1!
+1O
+1P
+17
+#225000
+0!
+0O
+0P
+07
+#237500
+1!
+1O
+1P
+17
+#240000
+b1 $
+1"
+b1001 $
+b1101 $
+1R
+1T
+1U
+1N
+07
+#250000
+0!
+0O
+0P
+17
+#262500
+1!
+1O
+1P
+07
+#275000
+0!
+0O
+0P
+17
+#287500
+1!
+1O
+1P
+07
+1~
+1}
+1|
+1l
+1k
+1j
+1A
+1@
+1?
+1+
+1*
+1)
+#300000
+0!
+0O
+0P
+17
+#312500
+1!
+1O
+1P
+07
+#325000
+0!
+0O
+0P
+17
+#337500
+1!
+1O
+1P
+07
+#350000
+b1100 $
+0"
+b100 $
+b0 $
+0!
+0R
+0T
+0U
+0N
+0O
+0P
+17
+#362500
+1!
+1O
+1P
+07
+#375000
+0!
+0O
+0P
+17
+#387500
+1!
+1O
+1P
+07
+#400000
+0!
+0O
+0P
+17
+#412500
+1!
+1O
+1P
+07
+#425000
+0!
+0O
+0P
+17
+#437500
+1!
+1O
+1P
+07
+#450000
+0!
+0O
+0P
+17
+#462500
+1!
+1O
+1P
+07
+#475000
+0!
+0O
+0P
+17
+#487500
+1!
+1O
+1P
+07
+#490000
+1#
+b1000 &
+b1010 &
+1Y
+1[
+1]
+17
+#500000
+0!
+0O
+0P
+07
+#512500
+1!
+1O
+1P
+17
+#525000
+0!
+0O
+0P
+07
+#537500
+1!
+1O
+1P
+17
+1/!
+1.!
+1+!
+1)!
+1(!
+1e
+1d
+1a
+1_
+1^
+1I
+1H
+1E
+1C
+1B
+13
+12
+1/
+1-
+1,
+#550000
+0!
+0O
+0P
+07
+#562500
+1!
+1O
+1P
+17
+#575000
+0!
+0O
+0P
+07
+#587500
+1!
+1O
+1P
+17
+#600000
+0!
+0O
+0P
+07
+#610000
+0#
+b10 &
+b0 &
+0Y
+0[
+0]
+17
+#612500
+1!
+1O
+1P
+07
+#625000
+0!
+0O
+0P
+17
+#637500
+1!
+1O
+1P
+07
+#650000
+0!
+0O
+0P
+17
+#662500
+1!
+1O
+1P
+07
+#675000
+0!
+0O
+0P
+17
+#687500
+1!
+1O
+1P
+07
+#700000
+0!
+0O
+0P
+17
+#712500
+1!
+1O
+1P
+07
+#725000
+0!
+0O
+0P
+17
+#737500
+1!
+1O
+1P
+07
+#750000
+0!
+0O
+0P
+17
+#762500
+1!
+1O
+1P
+07
+#775000
+0!
+0O
+0P
+17
+#787500
+1!
+1O
+1P
+07
+#800000
+0!
+0O
+0P
+17
+#812500
+1!
+1O
+1P
+07
+#825000
+0!
+0O
+0P
+17
+#837500
+1!
+1O
+1P
+07
+#850000
+0!
+0O
+0P
+17
+#862500
+1!
+1O
+1P
+07
+#875000
+0!
+0O
+0P
+17
+#887500
+1!
+1O
+1P
+07
+#900000
+0!
+0O
+0P
+17
+#912500
+1!
+1O
+1P
+07
+#925000
+0!
+0O
+0P
+17
+#937500
+1!
+1O
+1P
+07
+#950000
+0!
+0O
+0P
+17
+#962500
+1!
+1O
+1P
+07
+#975000
+0!
+0O
+0P
+17
+#987500
+1!
+1O
+1P
+07
+#1000000
