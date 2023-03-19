@@ -1,0 +1,9 @@
+package searchEngine;
+
+
+public class searchEngineTest {
+
+	public static void main(String[] args) {
+		searchEngine test = new searchEngine();
+	}
+}

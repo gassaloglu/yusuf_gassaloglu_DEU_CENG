@@ -1,0 +1,231 @@
+package searchEngine;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class Dictionary<K, V> {
+	private Entry<K, V>[] dictionary; 
+	private int numberOfEntries;
+	private static final int DEFAULT_SIZE = 10; 
+	private int index = 0;
+	public Dictionary() {
+		this(DEFAULT_SIZE); 
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Dictionary(int tableSize) {
+		tableSize = tableSize*2;
+		dictionary = new Entry[tableSize];
+		numberOfEntries = 0;
+	}
+	
+	public int getNumberOfEntries() {
+		return numberOfEntries;
+	}
+	
+	public int getDictionarySize() {
+		return dictionary.length;
+	}
+	
+	public V add(K key, V value) {
+		V oldValue; 
+		
+		if (dictionary.length == numberOfEntries) resize();
+
+		if ((dictionary[index] == null) || dictionary[index].isRemoved()) { 
+			dictionary[index] = new Entry<K, V>(key, value);
+			numberOfEntries++;
+			index++;
+			oldValue = null;
+		} else { 
+			oldValue = dictionary[index].getValue();
+			dictionary[index].setValue(value);
+		} 
+		return oldValue;
+	}
+
+	@SuppressWarnings("unchecked")
+	public void resize() {
+		Entry<K, V>[] oldTable = dictionary;
+		int oldSize = dictionary.length;
+		int newSize = oldSize*2;
+		dictionary = new Entry[newSize]; 
+		numberOfEntries = 0; 
+
+		for (int index = 0; index < oldSize; index++) {
+			if (oldTable[index] != null && oldTable[index].isIn()) {
+				add(oldTable[index].getKey(), oldTable[index].getValue());
+			}
+		}
+	}
+
+	private int locate(int index, K key) {
+		boolean found = false;
+		while (!found && (dictionary[index] != null)) {
+			if (dictionary[index].isIn() && key.equals(dictionary[index].getKey()))
+				found = true; 
+			else 
+				index = (index + 1) % dictionary.length; 
+		} 
+		int result = -1;
+		if (found)
+			result = index;
+		return result;
+	}
+
+	public V getValue(K key) {
+		V result = null;
+		index = locate(0, key);
+		if (index != -1)
+			result = dictionary[index].getValue(); 
+		return result;
+	}
+
+	public boolean contains(K key) {
+		index = locate(0, key);
+		if (index != -1)
+			return true;
+		return false;
+	}
+
+	public V remove(K key) {
+		V removedValue = null;
+
+		index = locate(0, key);
+		if (index != -1) { 
+			removedValue = dictionary[index].getValue();
+			dictionary[index].setToRemoved();
+			numberOfEntries--;
+		} 
+		return removedValue;
+	}
+	
+	public void clear() {
+		while(getKeyIterator().hasNext()) {
+			remove(getKeyIterator().next());		
+		}
+	}
+	
+	
+	public boolean isEmpty() {
+		return numberOfEntries == 0;
+	}
+
+	public int getSize() {
+		return numberOfEntries;
+	}
+	
+	public Iterator<K> getKeyIterator() {
+		return new KeyIterator();
+	}
+
+	public Iterator<V> getValueIterator() {
+		return new ValueIterator();
+	}
+	
+	private class Entry<S, T> {
+		private S key;
+		private T value;
+		private boolean inTable;
+
+		private Entry(S key, T value) {
+			this.key = key;
+			this.value = value;
+			inTable = true;
+		}
+
+		private S getKey() {
+			return key;
+		}
+
+		private T getValue() {
+			return value;
+		}
+
+		private void setValue(T value) {
+			this.value = value;
+		}
+
+		private boolean isRemoved() {
+			return inTable == false;
+		}
+
+		private void setToRemoved() {
+			inTable = false;
+		}
+
+		private void setToIn() {
+			inTable = true;
+		}
+
+		private boolean isIn() {
+			return inTable == true;
+		}
+	}
+	
+	private class KeyIterator implements Iterator<K> {
+		private int currentIndex; 
+		private int numberLeft; 
+
+		private KeyIterator() {
+			currentIndex = 0;
+			numberLeft = numberOfEntries;
+		} 
+
+		public boolean hasNext() {
+			return numberLeft > 0;
+		} 
+
+		public K next() {
+			K result = null;
+			if (hasNext()) {
+				while ((dictionary[currentIndex] == null) || dictionary[currentIndex].isRemoved()) {
+					currentIndex++;
+				} 
+				result = dictionary[currentIndex].getKey();
+				numberLeft--;
+				currentIndex++;
+			} else
+				throw new NoSuchElementException();
+			return result;
+		} 
+
+		public void remove() {
+			throw new UnsupportedOperationException();
+		} 
+	}
+	
+	private class ValueIterator implements Iterator<V> {
+		private int currentIndex; 
+		private int numberLeft; 
+
+		private ValueIterator() {
+			currentIndex = 0;
+			numberLeft = numberOfEntries;
+		} 
+
+		public boolean hasNext() {
+			return numberLeft > 0;
+		} 
+
+		public V next() {
+			V result = null;
+			if (hasNext()) {
+				while ((dictionary[currentIndex] == null) || dictionary[currentIndex].isRemoved()) {
+					currentIndex++;
+				} 
+				result = dictionary[currentIndex].getValue();
+				numberLeft--;
+				currentIndex++;
+			} else
+				throw new NoSuchElementException();
+			return result;
+		} 
+
+		public void remove() {
+			throw new UnsupportedOperationException();
+		} 
+	}
+	
+	
+}

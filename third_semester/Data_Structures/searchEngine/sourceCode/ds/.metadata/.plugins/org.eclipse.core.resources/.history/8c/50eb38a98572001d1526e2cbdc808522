@@ -1,0 +1,22 @@
+package searchEngine;
+
+import java.util.Iterator;
+
+public class searchEngineTest {
+
+	public static void main(String[] args) {
+		//searchEngine test = new searchEngine();
+		Dictionary<Integer, String> a = new Dictionary<Integer, String>();
+		a.add(1, "test");
+		a.add(2, "testestets");
+		System.out.println(a.getSize());
+		System.out.println(a.getNumberOfEntries());
+	}
+	 public void displayWordss(Dictionary<Integer, String> dataBase) {
+		Iterator<Integer> keyIterator = dataBase.getKeyIterator();
+		Iterator<String> valueIterator = dataBase.getValueIterator();
+		while (keyIterator.hasNext()) {
+			System.out.println("Key: " + keyIterator.next() + " Value: " + valueIterator.next());
+		}
+	}
+}

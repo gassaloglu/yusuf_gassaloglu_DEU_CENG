@@ -1,0 +1,10 @@
+package searchEngine;
+
+import java.util.Iterator;
+
+public class searchEngineTest {
+
+	public static void main(String[] args) {
+		searchEngine test = new searchEngine();
+	}
+}

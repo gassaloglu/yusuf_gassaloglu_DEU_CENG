@@ -1,0 +1,118 @@
+package searchEngine;
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class Dictionary<K, V> {
+	private Entry<K, V>[] dictionary; 
+	private int numberOfEntries;
+	private static final int DEFAULT_SIZE = 10; 
+	
+	
+	
+	private class Entry<S, T> {
+		private S key;
+		private T value;
+		private boolean inTable;
+
+		private Entry(S key, T value) {
+			this.key = key;
+			this.value = value;
+			inTable = true;
+		}
+
+		private S getKey() {
+			return key;
+		}
+
+		private T getValue() {
+			return value;
+		}
+
+		private void setValue(T value) {
+			this.value = value;
+		}
+
+		private boolean isRemoved() {
+			return inTable == false;
+		}
+
+		private void setToRemoved() {
+			inTable = false;
+		}
+
+		private void setToIn() {
+			inTable = true;
+		}
+
+		private boolean isIn() {
+			return inTable == true;
+		}
+	}
+	
+	private class KeyIterator implements Iterator<K> {
+		private int currentIndex; 
+		private int numberLeft; 
+
+		private KeyIterator() {
+			currentIndex = 0;
+			numberLeft = numberOfEntries;
+		} 
+
+		public boolean hasNext() {
+			return numberLeft > 0;
+		} 
+
+		public K next() {
+			K result = null;
+			if (hasNext()) {
+				while ((hashTable[currentIndex] == null) || hashTable[currentIndex].isRemoved()) {
+					currentIndex++;
+				} 
+				result = hashTable[currentIndex].getKey();
+				numberLeft--;
+				currentIndex++;
+			} else
+				throw new NoSuchElementException();
+			return result;
+		} 
+
+		public void remove() {
+			throw new UnsupportedOperationException();
+		} 
+	}
+	
+	private class ValueIterator implements Iterator<V> {
+		private int currentIndex; 
+		private int numberLeft; 
+
+		private ValueIterator() {
+			currentIndex = 0;
+			numberLeft = numberOfEntries;
+		} 
+
+		public boolean hasNext() {
+			return numberLeft > 0;
+		} 
+
+		public V next() {
+			V result = null;
+			if (hasNext()) {
+				while ((hashTable[currentIndex] == null) || hashTable[currentIndex].isRemoved()) {
+					currentIndex++;
+				} 
+				result = hashTable[currentIndex].getValue();
+				numberLeft--;
+				currentIndex++;
+			} else
+				throw new NoSuchElementException();
+			return result;
+		} 
+
+		public void remove() {
+			throw new UnsupportedOperationException();
+		} 
+	}
+	
+	
+}

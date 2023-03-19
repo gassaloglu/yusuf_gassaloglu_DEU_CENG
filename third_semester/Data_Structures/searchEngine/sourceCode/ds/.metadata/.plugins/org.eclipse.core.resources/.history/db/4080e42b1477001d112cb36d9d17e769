@@ -1,0 +1,265 @@
+package searchEngine;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Locale;
+
+public class searchEngine {
+	searchEngine() {
+		searchEngineTest();
+	}
+	
+	/** @NecessaryVariables
+	 *  */
+	HashedDictionary<String, AList<String>> 
+	allWords = new HashedDictionary<String, AList<String>>();
+	AList<String> stopWords = new AList<String>();
+	
+	long minSearchtime = Long.MAX_VALUE,
+			 maxSearchtime = Long.MIN_VALUE,
+			 totalSearchTime = 0;
+	long indexingTime = 0,
+	     searchCounter = 0;
+	
+	String minSearchtimeWord = "",
+		   maxSearchtimeWord = "";
+	
+	/** @inputSection
+	 *  **/
+	int howManyBookWillRead = 100;
+	double maxLoadFactor = 0.8;
+	String hashingFunction = "paf",
+		   collisionHandling = "dh";
+	String inputQuery = "edwards as asmashed british";
+	
+	void searchEngineTest() {
+		System.out.println("--- Performance Test ---");
+		allWords.setMaxLoadFactor(maxLoadFactor);
+		readStopWords("txtFiles\\stop_words_en.txt");
+		readAllTxtFilesInTheFolder("txtFiles\\sport");
+		performanceMonitoring();
+		System.out.println();
+		System.out.println("--- Relevance Test ---");
+		System.out.println("- Query: " + inputQuery);
+		findMostRelevantFile(inputQuery);
+	}
+	
+	void performanceMonitoring() {
+		BufferedReader br = readFile("txtFiles\\search.txt");
+        String text;
+        try {
+			while ((text = br.readLine()) != null) {
+				search(text);
+				}
+		} catch (Exception e) {
+			System.out.println("ERROR: " + e);
+			System.out.println("Search file is not found.");
+			System.out.println("-------------------------");
+		}
+  		System.out.println("- " +howManyBookWillRead +" BOOKS" + " -");
+  		System.out.println(hashingFunction.toUpperCase()+ " && " +collisionHandling.toUpperCase());
+  		System.out.println("- Max load factor: " + allWords.getMaxLoadFactor());
+  		System.out.println("- Total entries in the table: " + allWords.getSize());
+  		System.out.println("- Current table size: " + allWords.getHashTableSize()); 
+  		System.out.println("- Indexing time: "+ (double)indexingTime/(double)1000000 + " ms");
+  		System.out.print("- Search Collisions: "); allWords.getSearchCollisionCount();
+  		System.out.println("- Minimum search time: " + minSearchtime + " ns > " + minSearchtimeWord);
+		System.out.println("- Maximum search time: " + maxSearchtime + " ns > " + maxSearchtimeWord);
+		if (searchCounter  != 0) 
+			System.out.println("- Average search time: " + (double)(totalSearchTime/searchCounter)/(double)1000000 + " ms");
+	}
+	
+	private void search(String word) {
+		long start = System.nanoTime();
+		allWords.getValue(word, hashingFunction, collisionHandling, true);
+		long finish = System.nanoTime();
+		long timeElapsed = (finish - start);
+		totalSearchTime += timeElapsed;
+		if (timeElapsed > maxSearchtime) {
+			if (allWords.contains(word, hashingFunction, collisionHandling, false)) {
+				maxSearchtime = timeElapsed;
+				maxSearchtimeWord = word;
+			}
+		}
+		else if (timeElapsed < minSearchtime && timeElapsed != 0) {
+			if (allWords.contains(word, hashingFunction, collisionHandling, false)) {
+				minSearchtime = timeElapsed;
+				minSearchtimeWord = word;
+				}
+		}
+		searchCounter ++;
+	}
+	
+	private void findMostRelevantFile(String query) {
+		//TODO 
+		String[] words = query.split("\\s+");
+		if (words.length != 3) {
+			System.out.println("Please enter only 3 words.");
+			System.exit(0);
+		}
+		double totalWordCounter = 0,
+				   wordCounter = 0;
+		
+		double mostRelevantFileRatio = Double.MAX_VALUE,
+			   relevantRatio = 0;
+		
+		String mostRelevantFile = "";
+		for (String wordFirstCheck : words) {
+			boolean isWordExist = true;
+			if (!allWords.contains(wordFirstCheck, hashingFunction, collisionHandling, false)) {
+				isWordExist = false;
+			}
+			if (isWordExist) {
+				AList<String> txtFilesContainingWord = allWords.getValue(wordFirstCheck, hashingFunction, collisionHandling, false);
+				for (int i = 2; i <= txtFilesContainingWord.getLength(); i++) {
+					for (String wordSecondCheck : words) {
+						BufferedReader br = readFile("txtFiles\\sport\\" + txtFilesContainingWord.getEntry(i));
+				        String text;
+				        try {
+							while ((text = br.readLine()) != null) {
+								text = text.replaceAll("\\d", ""); // removing numbers
+								String[] wordsInTheCurrrentTxtFile = text.split("\\W+"); // removing delimiters
+							    for (int j = 0; j < wordsInTheCurrrentTxtFile.length; j++) {
+							    	totalWordCounter++;
+									if (wordsInTheCurrrentTxtFile[j].equalsIgnoreCase(wordSecondCheck)) {
+										wordCounter++; 
+									}
+								}
+							}
+						} catch (Exception e) {
+							System.out.println("ERROR: " + e);
+						}
+				        if (wordCounter == 0) {
+							relevantRatio += totalWordCounter + 1;
+						}
+				        else {
+							relevantRatio += totalWordCounter/wordCounter;
+						}   
+				        
+				        totalWordCounter = 0;
+				        wordCounter = 0;
+					}
+					if (mostRelevantFileRatio > relevantRatio) {
+						mostRelevantFile = txtFilesContainingWord.getEntry(i);
+						mostRelevantFileRatio = relevantRatio;
+					}
+					totalWordCounter = 0;
+			        wordCounter = 0;
+			        relevantRatio = 0;
+			    }
+			} else {
+				System.out.println(wordFirstCheck + " is not exist in txt files.");
+			}	
+		}
+		System.out.println("- " + mostRelevantFile + " is most relevant file.");
+	}
+	
+	private void readAllTxtFilesInTheFolder(String path) {
+		File folder = new File(path);
+		File[] listOfFiles = folder.listFiles();
+		int counter = 0;
+		for (File file : listOfFiles) {
+		    if (file.isFile()) {
+		    	counter++;
+		        readTxtFile("txtFiles\\sport\\" + file.getName());
+		    }
+		    if (counter == howManyBookWillRead) {
+				break;
+			}
+		}	
+	}
+	
+	BufferedReader readFile(String fileName) {
+		File file = new File(fileName);
+        BufferedReader br;
+		try {
+			br = new BufferedReader(new FileReader(file));
+			return br;
+		} catch (FileNotFoundException e) {
+			System.out.println("ERROR: " + e);
+			return null;
+		}
+	}
+	
+	void readTxtFile(String fileName) {
+		try {
+			BufferedReader br = readFile(fileName);
+	        String text;
+	        while ((text = br.readLine()) != null) {
+	        	text = text.replaceAll("\\d", ""); // removing numbers
+	        	String[] words = text.split("\\W+"); // removing delimiters
+	            for (int i = 0; i < words.length; i++) {
+	            	boolean notStopWord = true;
+	            	for (int j = 1; j < stopWords.getLength(); j++) {
+						if (words[i].equalsIgnoreCase(stopWords.getEntry(j))) {
+							notStopWord = false;
+						}
+					}
+	            	try {
+	            		if (notStopWord && words[i].length() > 0 && !allWords.contains(words[i].toLowerCase(Locale.ENGLISH), hashingFunction, collisionHandling, false)) {
+		            		AList<String> 
+		            		txtFilesWordCountAndHashValue = new AList<String>();
+		            		txtFilesWordCountAndHashValue.add(Integer.toString(allWords.getHashValue(words[i], hashingFunction)));
+		            		txtFilesWordCountAndHashValue.add(fileName.substring(15));
+		            		long indexingStart = System.nanoTime();
+		            		allWords.add(words[i].toLowerCase(Locale.ENGLISH), txtFilesWordCountAndHashValue, hashingFunction, collisionHandling);
+		            		long indexingFinish = System.nanoTime();
+		            		indexingTime += (indexingFinish - indexingStart);
+						}
+		            	else if (notStopWord && words[i].length() > 0 && allWords.contains(words[i].toLowerCase(Locale.ENGLISH), hashingFunction, collisionHandling ,false)) {
+		            		if (!allWords.getValue(words[i], hashingFunction, collisionHandling, false).contains(fileName.substring(15))) {
+			            		allWords.getValue(words[i], hashingFunction, collisionHandling, false).add(fileName.substring(15));
+							}
+						}
+					} catch (Exception e) {
+						//TODO pass
+					}
+				}
+	        }
+		} catch (Exception e) {
+			System.out.println("ERROR: " + e);
+		}
+	}
+	
+	@SuppressWarnings("resource")
+	void readStopWords(String fileName) {
+		 try {
+				File file = new File(fileName);
+		        BufferedReader br = new BufferedReader(new FileReader(file));
+		        String text;
+		        while ((text = br.readLine()) != null) {
+		        	if (text.length() > 0) {
+			        	text = text.replaceAll("\\W", ""); // removing delimiters
+		    		stopWords.add(text);	
+				}
+		    }
+		} catch (Exception e) {
+			System.out.println("ERROR: " + e);
+		}   
+	 }
+	 
+	public static void displayWords(HashedDictionary<String, AList<String>> dataBase) {
+			Iterator<String> keyIterator = dataBase.getKeyIterator();
+			Iterator<AList<String>> valueIterator = dataBase.getValueIterator();
+			while (keyIterator.hasNext()) {
+				System.out.println("Key: " + keyIterator.next() + " Value: " + valueIterator.next());
+			}
+		}
+	
+	@SuppressWarnings("rawtypes")
+	public static void testDisplay(HashedDictionary<String, AList<String>> dataBase) {
+		Iterator<String> keyIterator = dataBase.getKeyIterator();
+		Iterator<AList<String>> valueIterator = dataBase.getValueIterator();
+		while (keyIterator.hasNext()) {
+			System.out.println("-------------");
+			String s = keyIterator.next();
+			AList a = valueIterator.next();
+			System.out.println(s);
+			System.out.println(a.getEntry(1));
+		}
+	}
+}
