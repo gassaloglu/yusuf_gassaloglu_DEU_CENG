@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="records">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="customer_info">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" minOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="2"/>
+                          <xs:maxLength value="20"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="surname" minOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="2"/>
+                          <xs:maxLength value="30"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="gender" minOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:pattern value="M|F"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="occupancy" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="0"/>
+                          <xs:maxLength value="30"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="level_of_education" minOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="PhD"/>
+                          <xs:enumeration value="MSc"/>
+                          <xs:enumeration value="BSc"/>
+                          <xs:enumeration value="HS"/>
+                          <xs:enumeration value="PS"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="email" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:pattern value="[a-zA-Z0-9._-]+@(gmail\.com|yahoo\.com|hotmail\.com)|()"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="bank_account_info">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="bank_account_number" minOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:pattern value="[0-9]{4}-[0-9]{7}"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="IBAN" minOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:pattern value="TR[0-9]{2}\s*[0-9]{4}\s*[0-9]{4}\s*[0-9]{4}\s*[0-9]{4}\s*[0-9]{2}"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="account_type" minOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="deposit"/>
+                          <xs:enumeration value="drawing"/>
+                          <xs:enumeration value="daily_deposit"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="total_balance_available" minOccurs="1">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="currency_unit" use="required">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:enumeration value="€" />
+                                  <xs:enumeration value="₺" />
+                                  <xs:enumeration value="$" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:attribute>
+                            <xs:attribute name="bigEnd_version" type="xs:string" use="required"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="available_for_loan" minOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:pattern value="☹|😊"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id">
+            <xs:simpleType>
+              <xs:restriction base="xs:integer">
+                <xs:minInclusive value="1"/>
+              </xs:restriction>
+            </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

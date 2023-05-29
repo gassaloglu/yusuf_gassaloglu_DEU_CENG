@@ -1,4 +1,0 @@
-library verilog;
-use verilog.vl_types.all;
-entity yusuf_gassaloglu_2020510034_HW1_b_vlg_vec_tst is
-end yusuf_gassaloglu_2020510034_HW1_b_vlg_vec_tst;

@@ -1,5 +1,0 @@
-set_global_assignment -name IP_TOOL_NAME "LPM_COUNTER"
-set_global_assignment -name IP_TOOL_VERSION "13.1"
-set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "yusuf_gassaloglu_lpm_counter.tdf"]
-set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "yusuf_gassaloglu_lpm_counter.bsf"]
-set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "yusuf_gassaloglu_lpm_counter.inc"]

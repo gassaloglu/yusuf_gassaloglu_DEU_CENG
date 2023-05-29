@@ -1,7 +1,0 @@
-<?xml version="1.0" ?>
-<LOG_ROOT>
-	<PROJECT NAME="yusuf_gassaloglu_2020510034_HW2">
-		<CBX_INST_ENTRY INSTANCE_NAME="|yusuf_gassaloglu_2020510034_HW2|yusuf_gassaloglu_code_memory_rom:inst1|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_j8c1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|yusuf_gassaloglu_2020510034_HW2|yusuf_gassaloglu_data_memory_ram:inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_7fk1.tdf"/>
-	</PROJECT>
-</LOG_ROOT>
