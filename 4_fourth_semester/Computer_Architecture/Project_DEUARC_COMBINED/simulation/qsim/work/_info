@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\berka\Desktop\2020510034_Yusuf_group19_ALU\simulation\qsim
+v\2020510030_Berkay-Dinc_Group19_Lab5_Project_BUS 
+Z1 !s100 H2S0BRV91RQ:BEg68zS2e0
+Z2 Ifl_<KCz=<bU?mKjU@ToMz1
+Z3 VD[KeH]6<1GV`B^8o@S74b3
+Z4 dC:\Users\berka\Desktop\2020510030_Berkay-Dinc_Group19_Lab5_Project_BUS\simulation\qsim
+Z5 w1681904145
+Z6 82020510034_Yusuf_group19_ALU.vo
+Z7 F2020510034_Yusuf_group19_ALU.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|2020510034_Yusuf_group19_ALU.vo|
+Z10 o-work work -O0
+Z11 n@1342020510030_@berkay-@dinc_@group19_@lab5_@project_@b@u@s@040
+Z12 !s108 1681904146.797000
+Z13 !s107 2020510034_Yusuf_group19_ALU.vo|
+!i10b 1
+!s85 0
+!s101 -O0
+v\2020510034_Yusuf_group19_ALU 
+Z14 IHhTWzBgzXbQXmEDM@EM_n1
+Z15 VzckU6^lN>8RQfPiBfE:HJ2
+Z16 dC:\Users\berka\Desktop\2020510034_Yusuf_group19_ALU\simulation\qsim
+Z17 w1679662171
+R6
+R7
+L0 31
+R8
+r1
+31
+R9
+R10
+Z18 n@1342020510034_@yusuf_group19_@a@l@u@040
+Z19 !s100 MeECd8;WDG5oEYJ`[c^E<2
+Z20 !s108 1679662172.029000
+R13
+!i10b 1
+!s85 0
+!s101 -O0
+v\2021510008_Alperen_Aydin_Group19_Lab5_Project_CONTROL_UNIT 
+Z21 IW=9JnV>USd;bfJQgcn1<c0
+Z22 VF]6zL]VPl=;o2D9AHLc=P2
+Z23 dC:\Users\berka\Desktop\2021510008_Alperen_Aydin_Group19_Lab5_Project_CONTROL_UNIT\simulation\qsim
+Z24 w1684868685
+R6
+R7
+L0 31
+R8
+r1
+31
+R9
+R10
+Z25 n@1342021510008_@alperen_@aydin_@group19_@lab5_@project_@c@o@n@t@r@o@l_@u@n@i@t@040
+!i10b 1
+Z26 !s100 :=RX9GPRMKe`nG8Jli0]n2
+!s85 0
+Z27 !s108 1684868687.003000
+R13
+!s101 -O0
+v\2021510008_Alperen_Aydin_Group19_Lab8_Project_CONTROL_UNIT 
+!i10b 1
+!s100 kUi;>`<hZX4EXnFI^9Z>>1
+I_>DCXz6J<Nfl0OeBkB4=Z3
+V4VAb6>HKB<B2_]Z[9V8?12
+dC:\Users\berka\Desktop\2021510008_Alperen_Aydin_Group19_Lab8_Project_CONTROL_UNIT\simulation\qsim
+w1684873293
+R6
+R7
+L0 31
+R8
+r1
+!s85 0
+31
+!s108 1684873294.189000
+!s107 2020510034_Yusuf_group19_ALU.vo|
+R9
+!s101 -O0
+R10
+n@1342021510008_@alperen_@aydin_@group19_@lab8_@project_@c@o@n@t@r@o@l_@u@n@i@t@040

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon May 29 21:15:18 2023
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : 2020510034_Yusuf_group19_ALU
+Top-level Entity Name : 2021510008_Alperen_Aydin_Group19_Lab8_Project_CONTROL_UNIT
+Family : Cyclone III
+Total logic elements : 188
+    Total combinational functions : 165
+    Dedicated logic registers : 49
+Total registers : 49
+Total pins : 76
+Total virtual pins : 0
+Total memory bits : 496
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

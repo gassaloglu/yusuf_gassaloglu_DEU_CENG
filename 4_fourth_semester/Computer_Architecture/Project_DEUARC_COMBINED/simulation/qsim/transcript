@@ -1,0 +1,12 @@
+# do 2020510034_Yusuf_group19_ALU.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module \2021510008_Alperen_Aydin_Group19_Lab8_Project_CONTROL_UNIT 
+# 
+# Top level modules:
+# 	\2021510008_Alperen_Aydin_Group19_Lab8_Project_CONTROL_UNIT 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# ** Error: 2020510034_Yusuf_group19_ALU.vt(29): near "2021510008": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or automatic or TYPE_IDENTIFIER or static
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Executing ONERROR command at macro ./2020510034_Yusuf_group19_ALU.do line 4

@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="2020510034_Yusuf_group19_ALU">
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|2020510034_Yusuf_group19_ALU:inst10|SHIFT_MUX:inst15|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_96e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|2020510034_Yusuf_group19_ALU:inst10|OVERFLOW_MUX:inst1|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_g6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|2020510034_Yusuf_group19_ALU:inst10|SHIFT_MUX:inst16|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_96e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|MUX_DATA5_SEL1:inst64|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_e6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|MUX_DATA5_SEL1:inst65|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_e6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|SC:inst5|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_bri.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|2020510034_Yusuf_group19_ALU:inst10|ADDER:inst8|lpm_add_sub:LPM_ADD_SUB_component" CBX_FILE_NAME="add_sub_vui.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|2020510034_Yusuf_group19_ALU:inst10|SHIFT_MUX:inst18|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_96e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|FLAG:inst73|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_2cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|MUX_DATA4_SEL1:inst32|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_d6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|MUX_DATA4_SEL1:inst41|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_d6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|MUX_DATA4_SEL2:MUX_SEL_S3|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_f6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|lpm_add_sub0:inst59|lpm_add_sub:LPM_ADD_SUB_component" CBX_FILE_NAME="add_sub_hlg.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|register4bit:ADDRESS_REGISTER|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_4ii.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|2020510034_Yusuf_group19_ALU:inst10|SHIFT_MUX:inst19|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_96e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|DECODER2x4:inst1|lpm_decode:LPM_DECODE_component" CBX_FILE_NAME="decode_0af.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|INSTRUCTION_DECODER:inst6|lpm_decode:LPM_DECODE_component" CBX_FILE_NAME="decode_lbf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|MUX_DATA4_SEL1:inst33|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_d6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|MUX_DATA4_SEL1:inst42|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_d6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|2020510034_Yusuf_group19_ALU:inst10|OUTPUT_MUX:inst|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_j6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|FLAG:inst31|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_2cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|MUX_DATA4_SEL1:inst43|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_d6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|MUX_DATA4_SEL1:inst70|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_d6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|register11bit:INSTRUCTION_REGISTER|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_7sj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|register4bit:INPUT_REGISTER|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_4ii.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|register4bit:REGISTER_0|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_4ii.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|2020510034_Yusuf_group19_ALU:inst10|ADDER:inst12|lpm_add_sub:LPM_ADD_SUB_component" CBX_FILE_NAME="add_sub_vui.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|MUX_DATA4_SEL1:inst71|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_d6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|register4bit:OUTPUT_REGISTER|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_4ii.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|register4bit:REGISTER_1|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_4ii.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|data_memory:DATA_MEM|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_g3m1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|instruction_memory:INS_MEM|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_lle1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|register4bit:REGISTER_2|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_4ii.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|register4bit:STACK_POINTER|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_4ii.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|stack_memory:STACK_MEM|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_cbf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|FLAG:inst34|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_2cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|SP_ZERO_DECODER:inst2|lpm_decode:LPM_DECODE_component" CBX_FILE_NAME="decode_lbf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|MUX_DATA4_SEL2:MUX_SEL_S1|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_f6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|T_DECODE:inst3|lpm_decode:LPM_DECODE_component" CBX_FILE_NAME="decode_5af.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|lpm_constant0:inst66|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_dh6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|register5bit:PROGRAM_COUNTER|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_5ii.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|MUX_DATA4_SEL1:inst40|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_d6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|2021510008_Alperen_Aydin_Group19_Lab14_Project_DEUARC_COMBINED|MUX_DATA4_SEL2:MUX_SEL_S2|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_f6e.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'MASTER_CLOCK'
+Slack : -4.547
+TNS   : -141.867
+
+Type  : Slow 1200mV 85C Model Setup 'MEMORY_CLOCK'
+Slack : -1.780
+TNS   : -40.810
+
+Type  : Slow 1200mV 85C Model Hold 'MEMORY_CLOCK'
+Slack : 0.278
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'MASTER_CLOCK'
+Slack : 0.377
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MEMORY_CLOCK'
+Slack : -3.000
+TNS   : -61.698
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MASTER_CLOCK'
+Slack : -3.000
+TNS   : -52.000
+
+Type  : Slow 1200mV 0C Model Setup 'MASTER_CLOCK'
+Slack : -4.000
+TNS   : -123.370
+
+Type  : Slow 1200mV 0C Model Setup 'MEMORY_CLOCK'
+Slack : -1.505
+TNS   : -34.225
+
+Type  : Slow 1200mV 0C Model Hold 'MEMORY_CLOCK'
+Slack : 0.277
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'MASTER_CLOCK'
+Slack : 0.335
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MEMORY_CLOCK'
+Slack : -3.000
+TNS   : -61.698
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MASTER_CLOCK'
+Slack : -3.000
+TNS   : -52.000
+
+Type  : Fast 1200mV 0C Model Setup 'MASTER_CLOCK'
+Slack : -2.117
+TNS   : -61.725
+
+Type  : Fast 1200mV 0C Model Setup 'MEMORY_CLOCK'
+Slack : -0.490
+TNS   : -7.743
+
+Type  : Fast 1200mV 0C Model Hold 'MEMORY_CLOCK'
+Slack : 0.126
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'MASTER_CLOCK'
+Slack : 0.198
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MASTER_CLOCK'
+Slack : -3.000
+TNS   : -55.107
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MEMORY_CLOCK'
+Slack : -3.000
+TNS   : -33.250
+
+------------------------------------------------------------
