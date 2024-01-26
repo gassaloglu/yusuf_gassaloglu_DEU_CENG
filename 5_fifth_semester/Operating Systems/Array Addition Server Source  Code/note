@@ -1,0 +1,8 @@
+- receive raw bytes coming from telnet
+
+- sanitize the bytes (add null terminator)
+
+- check buffer (do not accept inputs not less than INPUT_SIZE) this reserves a 
+  space for null terminator in order to strtok work correctly
+
+- 

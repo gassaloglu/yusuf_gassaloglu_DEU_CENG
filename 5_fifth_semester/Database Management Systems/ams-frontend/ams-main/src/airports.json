@@ -1,0 +1,97 @@
+[
+    {
+        "iata": "JFK",
+        "name": "John F Kennedy International Airport",
+        "city" : "New York"
+    },
+    {
+        "iata": "LHR",
+        "name": "Heathrow Airport",
+        "city" : "London"
+    },
+    {
+        "iata": "ADB",
+        "name": "Adnan Menderes International Airport",
+        "city" : "Izmir"
+    },
+    {
+        "iata": "CDG",
+        "name": "Charles de Gaulle International Airport",
+        "city" : "Paris"
+    },
+    {
+        "iata": "FRA",
+        "name": "Frankfurt am Main International Airport",
+        "city" : "Frankfurt"
+    },
+    {
+        "iata": "AMS",
+        "name": "Amsterdam Airport Schiphol",
+        "city" : "Amsterdam"
+    },
+    {
+        "iata": "IST",
+        "name": "İstanbul Airport",
+        "city" : "Istanbul"
+    },
+    {
+        "iata": "ESB",
+        "name": "Esenboga Airport",
+        "city" : "Ankara"
+    },
+    {
+        "iata": "SFO",
+        "name": "San Francisco International Airport",
+        "city" : "San Francisco"
+    },
+    {
+        "iata": "LAX",
+        "name": "Los Angeles International Airport",
+        "city" : "Los Angeles"
+    },
+    {
+        "iata": "ATL",
+        "name": "Hartsfield-Jackson Atlanta International",
+        "city" : "Atalanta"
+    },
+    {
+        "iata": "PEK",
+        "name": "Beijing Capital International Airport",
+        "city" : "Beijing"
+    },
+    {
+        "iata": "ORD",
+        "name": "Chicago O'Hare Airport",
+        "city" : "Chicago"
+    },
+    {
+        "iata": "HND",
+        "name": "Haneda Airport",
+        "city" : "Tokyo"
+    },
+    {
+        "iata": "ADA",
+        "name": "Adana Airport",
+        "city" : "Adana"
+    },
+    {
+        "iata": "DXB",
+        "name": "Dubai International Airport",
+        "city" : "Dubai"
+    },
+    {
+        "iata": "SIN",
+        "name": "Singapore Changi International Airport",
+        "city" : "Dubai"
+    },
+    {
+        "iata": "FCO",
+        "name": "Leonardo da Vinci-Fiumicino Airport",
+        "city" : "Rome"
+    },
+    {
+        "iata": "SYD",
+        "name": "Sydney Airport",
+        "city" : "Sydney"
+    }
+]
