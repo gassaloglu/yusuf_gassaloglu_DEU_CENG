@@ -1,0 +1,1 @@
+https://github.com/gassaloglu/Anomaly-Detection-in-Network-Traffic-Using-Machine-Learning-for-Next-Generation-Firewalls

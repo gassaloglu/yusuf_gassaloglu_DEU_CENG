@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: #0056b3;
+        }
+
+        #get-results-btn {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 30px auto;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #get-results-btn:hover {
+            background-color: #218838;
+        }
+
+        .result-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .result {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 350px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Survey Results</h1>
+
+    <button id="get-results-btn">Get Results</button>
+
+    <div id="results" class="result-container">
+        <!-- Numeric results and images will be displayed here -->
+    </div>
+
+    <script>
+        // JavaScript to handle button click and display the results
+        document.getElementById('get-results-btn').addEventListener('click', function() {
+            fetch('/get-results')
+                .then(response => response.json())
+                .then(data => {
+                    const resultsDiv = document.getElementById('results');
+                    resultsDiv.innerHTML = '';
+
+                    if (data.results) {
+                        // Display the numeric results
+                        const results = data.results;
+                        for (const [key, value] of Object.entries(results)) {
+                            const resultDiv = document.createElement('div');
+                            resultDiv.classList.add('result');
+                            resultDiv.innerHTML = `<strong>${key.replace(/_/g, ' ')}:</strong> ${value}`;
+                            resultsDiv.appendChild(resultDiv);
+                        }
+                        
+                        // Display the images
+                        const images = data.images;
+                        for (const [key, imagePath] of Object.entries(images)) {
+                            const imgTag = document.createElement('img');
+                            imgTag.src = imagePath;
+                            imgTag.alt = key;
+                            resultsDiv.appendChild(imgTag);
+                        }
+
+                        // Display the numeric results
+                        const means = data.means;
+                        for (const [key, value] of Object.entries(means)) {
+                            const resultDiv = document.createElement('div');
+                            resultDiv.classList.add('mean');
+                            resultDiv.innerHTML = `<strong>${key.replace(/_/g, ' ')}:</strong> ${value}`;
+                            resultsDiv.appendChild(resultDiv);
+                        }
+
+                        // Display IPA Analysis
+                        const ipa = data.ipa// Display IPA Analysis
+                        // If the string is JSON-like (contains valid JSON), parse and display it
+                        const parsedIpa = JSON.parse(data.ipa);
+                        // Create the table
+                        const table = document.createElement('table');
+                        table.style.margin = 'auto'; // Centers the table horizontally
+                        table.style.borderCollapse = 'collapse';
+                        table.classList.add('ipa-table');
+                        const thead = document.createElement('thead');
+                        const tbody = document.createElement('tbody');
+
+                        // Create table headers from the keys of the first object in the array
+                        const headers = Object.keys(parsedIpa[0]);
+                        const headerRow = document.createElement('tr');
+                        headers.forEach(header => {
+                            const th = document.createElement('th');
+                            th.innerText = header.replace(/_/g, ' ');  // Replace underscores with spaces for readability
+                            headerRow.appendChild(th);
+                        });
+                        thead.appendChild(headerRow);
+                        table.appendChild(thead);
+
+                        // Create table rows from the array of objects
+                        parsedIpa.forEach(ipaItem => {
+                            const row = document.createElement('tr');
+                            headers.forEach(header => {
+                                const td = document.createElement('td');
+                                td.innerText = ipaItem[header];
+                                row.appendChild(td);
+                            });
+                            tbody.appendChild(row);
+                        });
+
+                        table.appendChild(tbody);
+                        resultsDiv.appendChild(table);
+                        
+                    } else {
+                        const errorMessage = document.createElement('div');
+                        errorMessage.classList.add('error-message');
+                        errorMessage.innerHTML = "Error fetching results. Please try again.";
+                        resultsDiv.appendChild(errorMessage);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching results:', error);
+                    const errorMessage = document.createElement('div');
+                    errorMessage.classList.add('error-message');
+                    errorMessage.innerHTML = "An error occurred while fetching results.";
+                    document.getElementById('results').appendChild(errorMessage);
+                });
+        });
+    </script>
+</body>
+</html>

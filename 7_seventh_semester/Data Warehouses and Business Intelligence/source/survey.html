@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Survey</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .radio-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .radio-group label {
+      font-weight: normal;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #007BFF;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Customer Survey</h1>
+    <form id="surveyForm" action="/submit-survey" method="POST">
+      <!-- ID Field -->
+      <label for="id">ID (max 11 digits):</label>
+      <input type="text" id="id" name="id" maxlength="11" required>
+
+      <!-- Gender Field -->
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+      </select>
+
+      <!-- Age Field -->
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+
+      <!-- Type of Travel Field -->
+      <label for="travelType">Type of Travel:</label>
+      <select id="travelType" name="travelType" required>
+        <option value="">Select Type of Travel</option>
+        <option value="Business travel">Business travel</option>
+        <option value="Personal Travel">Personal Travel</option>
+      </select>
+
+      <!-- Class Field -->
+      <label for="class">Class:</label>
+      <select id="class" name="class" required>
+        <option value="">Select Class</option>
+        <option value="Eco">Eco</option>
+        <option value="Eco Plus">Eco Plus</option>
+        <option value="Business">Business</option>
+      </select>
+
+      <!-- Multiple Rating Fields -->
+      <div>
+        <label>Inflight Wi-fi Service:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="wifi" value="1" required> 1</label>
+          <label><input type="radio" name="wifi" value="2"> 2</label>
+          <label><input type="radio" name="wifi" value="3"> 3</label>
+          <label><input type="radio" name="wifi" value="4"> 4</label>
+          <label><input type="radio" name="wifi" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Departure/Arrival time convenient:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="timeConvenient" value="1" required> 1</label>
+          <label><input type="radio" name="timeConvenient" value="2"> 2</label>
+          <label><input type="radio" name="timeConvenient" value="3"> 3</label>
+          <label><input type="radio" name="timeConvenient" value="4"> 4</label>
+          <label><input type="radio" name="timeConvenient" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Ease of Online Booking:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="booking" value="1" required> 1</label>
+          <label><input type="radio" name="booking" value="2"> 2</label>
+          <label><input type="radio" name="booking" value="3"> 3</label>
+          <label><input type="radio" name="booking" value="4"> 4</label>
+          <label><input type="radio" name="booking" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Gate Location:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="gateLocation" value="1" required> 1</label>
+          <label><input type="radio" name="gateLocation" value="2"> 2</label>
+          <label><input type="radio" name="gateLocation" value="3"> 3</label>
+          <label><input type="radio" name="gateLocation" value="4"> 4</label>
+          <label><input type="radio" name="gateLocation" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Food and Drink:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="foodDrink" value="1" required> 1</label>
+          <label><input type="radio" name="foodDrink" value="2"> 2</label>
+          <label><input type="radio" name="foodDrink" value="3"> 3</label>
+          <label><input type="radio" name="foodDrink" value="4"> 4</label>
+          <label><input type="radio" name="foodDrink" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Online Boarding:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="onlineBoarding" value="1" required> 1</label>
+          <label><input type="radio" name="onlineBoarding" value="2"> 2</label>
+          <label><input type="radio" name="onlineBoarding" value="3"> 3</label>
+          <label><input type="radio" name="onlineBoarding" value="4"> 4</label>
+          <label><input type="radio" name="onlineBoarding" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Seat Comfort:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="seatComfort" value="1" required> 1</label>
+          <label><input type="radio" name="seatComfort" value="2"> 2</label>
+          <label><input type="radio" name="seatComfort" value="3"> 3</label>
+          <label><input type="radio" name="seatComfort" value="4"> 4</label>
+          <label><input type="radio" name="seatComfort" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Inflight entertainment:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="entertainment" value="1" required> 1</label>
+          <label><input type="radio" name="entertainment" value="2"> 2</label>
+          <label><input type="radio" name="entertainment" value="3"> 3</label>
+          <label><input type="radio" name="entertainment" value="4"> 4</label>
+          <label><input type="radio" name="entertainment" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div>
+        <label>On-board service:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="onboard" value="1" required> 1</label>
+          <label><input type="radio" name="onboard" value="2"> 2</label>
+          <label><input type="radio" name="onboard" value="3"> 3</label>
+          <label><input type="radio" name="onboard" value="4"> 4</label>
+          <label><input type="radio" name="onboard" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Leg room service:</label>
+        <div class="radio-group">
+          <label><input type="radio" value="1" required> 1</label>
+          <label><input type="radio" name="legroom" value="2"> 2</label>
+          <label><input type="radio" name="legroom" value="3"> 3</label>
+          <label><input type="radio" name="legroom" value="4"> 4</label>
+          <label><input type="radio" name="legroom" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Baggage handling:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="baggage" value="1" required> 1</label>
+          <label><input type="radio" name="baggage" value="2"> 2</label>
+          <label><input type="radio" name="baggage" value="3"> 3</label>
+          <label><input type="radio" name="baggage" value="4"> 4</label>
+          <label><input type="radio" name="baggage" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Checkin service:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="checkin" value="1" required> 1</label>
+          <label><input type="radio" name="checkin" value="2"> 2</label>
+          <label><input type="radio" name="checkin" value="3"> 3</label>
+          <label><input type="radio" name="checkin" value="4"> 4</label>
+          <label><input type="radio" name="checkin" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Inflight service:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="inflight" value="1" required> 1</label>
+          <label><input type="radio" name="inflight" value="2"> 2</label>
+          <label><input type="radio" name="inflight" value="3"> 3</label>
+          <label><input type="radio" name="inflight" value="4"> 4</label>
+          <label><input type="radio" name="inflight" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div>
+        <label>Cleanliness:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="Cleanliness" value="1" required> 1</label>
+          <label><input type="radio" name="Cleanliness" value="2"> 2</label>
+          <label><input type="radio" name="Cleanliness" value="3"> 3</label>
+          <label><input type="radio" name="Cleanliness" value="4"> 4</label>
+          <label><input type="radio" name="Cleanliness" value="5"> 5</label>
+        </div>
+      </div>
+
+
+
+      <button type="submit">Submit</button>
+
+    </form>
+
+  </div>
+</body>
+
+</html>

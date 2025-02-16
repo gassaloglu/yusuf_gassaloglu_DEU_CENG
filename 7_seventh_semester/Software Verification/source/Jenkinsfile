@@ -1,0 +1,91 @@
+/*
+Need Update
+*/
+pipeline {
+     agent {
+        kubernetes {
+            yamlFile 'Agent.yaml'
+        }
+    }
+
+    environment {
+        FLASK_APP = 'app.py'  // Adjust to the main entry point of your Flask app
+        FLASK_ENV = 'development'
+        DOCKER_IMAGE = 'flask-testing-service'
+        DOCKER_TAG = 'latest'
+    }
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                // Clone the repository
+                git branch: 'main', credentialsId: 'test-username', url: 'https://github.com/airline-management-system/swv.git'
+            }
+        }
+/*
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build the Docker image for your Flask app
+                    sh """
+                    docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
+                    """
+                }
+            }
+        }
+*/
+
+        stage('Install Dependencies') {
+            steps {
+               container(name: 'python') {
+               // Run python unit tests               
+               sh 'pip install -r requirements.txt'
+               }
+            }
+        }
+         
+        stage('Run Unit Tests') {
+            steps {
+               container(name: 'python') {
+               // Run python unit tests              
+               sh 'python -m unittest discover -s tests -p test_service.py'
+               }
+            }
+        }
+
+         stage('Start Server') {
+            steps {
+               container(name: 'python') {
+               // Run python unit tests              
+               sh 'python app.py & '
+               }
+            }
+        }
+
+         stage('Run Integration Tests') {
+            steps {
+               container(name: 'python') {
+               // Run python integration tests         
+               sh 'pytest tests/test_integration.py'
+               }
+            }
+        }
+
+        stage('Run Performance Tests') {
+            steps {
+               container(name: 'python') {
+               // Run python performnce tests
+               sh 'locust -f tests/test_performance.py --host http://localhost:5000 -u 1 -r 10 --run-time 30s --headless --loglevel DEBUG'
+               }
+            }
+        }        
+    }
+
+    post {
+        always {
+            // Ensure Docker container cleanup after the job
+            //sh 'docker system prune -f'
+             sh 'echo $(jobs -p)'
+        }
+    }
+}

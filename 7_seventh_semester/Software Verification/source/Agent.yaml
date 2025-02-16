@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+spec:
+  hostNetwork: true
+  dnsPolicy: ClusterFirstWithHostNet
+  containers:
+    - name: python
+      image: python:3.11
+      command: 
+        - sleep
+      args:
+        - infinity
+    - name: kaniko
+      image: gcr.io/kaniko-project/executor:debug
+      command: 
+        - /busybox/sleep
+      args:
+        - infinity
+      volumeMounts:
+        - name: kaniko-harbor-credentials
+          mountPath: /kaniko/.docker
+  volumes:
+    - name: kaniko-harbor-credentials
+      secret:
+        secretName: harbor-credentials 
